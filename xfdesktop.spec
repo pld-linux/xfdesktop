@@ -5,12 +5,12 @@
 Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
-Version:	4.1.99.1
-Release:	3
+Version:	4.1.99.2
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	e143f8eb9f6c22230040550e26af8ac6
+# Source0-md5:	1d271a84f561d1523172e86a5b9960a0
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-menu.patch
 Patch2:		%{name}-vfmg.patch
@@ -49,6 +49,7 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 %{?with_vfmg:%patch2 -p1}
 
 mv -f po/{pt_PT,pt}.po
+mv -f po/{nb_NO,nb}.po
 mv -f menu.xml.fa_IR menu.xml.fa
 
 %build
@@ -114,6 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fr
 %lang(he) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.he
 %lang(hu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.hu
+%lang(ko) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ko
 %lang(ms) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ms
 %lang(nl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nl
 %lang(pl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pl
