@@ -9,3 +9,14 @@
  		      ru sk sv ta tr uk vi zh_CN zh_TW])
  
  dnl Check for X11 installed
+--- xfdesktop-4.1.99.3/Makefile.am~	2004-12-05 21:50:12.000000000 +0100
++++ xfdesktop-4.1.99.3/Makefile.am	2004-12-28 16:39:37.406489344 +0100
+@@ -40,7 +40,7 @@
+ 	menu.xml.es							\
+ 	menu.xml.et							\
+ 	menu.xml.eu							\
+-	menu.xml.fa_IR 							\
++	menu.xml.fa 							\
+ 	menu.xml.fr 							\
+ 	menu.xml.he							\
+ 	menu.xml.hu 							\
