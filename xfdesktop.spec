@@ -9,7 +9,6 @@ Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.
 # Source0-md5:	21eace73c6daecdc948f789d759e4a38
 URL:		http://www.xfce.org/
 BuildRequires:	automake
-BuildRequires:	autoconf
 BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
@@ -30,12 +29,10 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 %setup -q
 
 %build
-rm -f missing
+#rm -f missing
 glib-gettextize --copy --force
 intltoolize --copy --force
-%{__aclocal}
-%{__autoconf}
-%{__automake}
+cp -f /usr/share/automake/config.sub .
 %configure
 
 %{__make}
