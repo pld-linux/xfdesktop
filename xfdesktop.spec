@@ -2,7 +2,7 @@ Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
 Version:	3.99.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce4-rc3/src/%{name}-%{version}.tar.gz
@@ -54,6 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.*
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml
 %{_datadir}/xfce4/backdrops
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*.html
