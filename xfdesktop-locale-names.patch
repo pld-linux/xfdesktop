@@ -1,6 +1,6 @@
-diff -urN xfdesktop.orig/configure.ac xfdesktop/configure.ac
+diff -ur xfdesktop.orig/configure.ac xfdesktop/configure.ac
 --- xfdesktop.orig/configure.ac	2004-08-15 01:06:20.000000000 +0200
-+++ xfdesktop/configure.ac	2004-08-16 23:03:36.156724472 +0200
++++ xfdesktop/configure.ac	2004-08-16 23:14:11.804091384 +0200
 @@ -32,8 +32,8 @@
  AC_CHECK_FUNCS(mmap sigaction srandom)
  
@@ -12,3 +12,15 @@ diff -urN xfdesktop.orig/configure.ac xfdesktop/configure.ac
  		      zh_CN zh_TW])
  
  dnl Check for X11 installed
+diff -ur xfdesktop.orig/Makefile.am xfdesktop/Makefile.am
+--- xfdesktop.orig/Makefile.am	2004-08-13 16:50:40.000000000 +0200
++++ xfdesktop/Makefile.am	2004-08-16 23:14:19.724887240 +0200
+@@ -39,7 +39,7 @@
+ 	menu.xml.de 							\
+ 	menu.xml.es								\
+ 	menu.xml.eu								\
+-	menu.xml.fa_IR 							\
++	menu.xml.fa 							\
+ 	menu.xml.fr 							\
+ 	menu.xml.hu 							\
+ 	menu.xml.ms  							\
