@@ -5,12 +5,12 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
 Name:		xfdesktop
-Version:	4.1.99.3
-Release:	2
+Version:	4.2.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	d5243949be5200f0678f4d5754d3e8ce
+Source0:	http://www.us.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
+# Source0-md5:	1cacd48e0ab475f4fd55d79020d60c55
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-menu.patch
 Patch2:		%{name}-vfmg.patch
@@ -26,7 +26,7 @@ BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-panel-devel >= %{version}
-%{?with_vfmg:Requires: vfmg >= 0.9.18-8}
+%{?with_vfmg:Requires:	vfmg >= 0.9.18-8}
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -91,10 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*.png
-%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
-%lang(it) %{_datadir}/xfce4/doc/it/*.html
-%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
 %{_mandir}/man1/*.1*
 
 %dir %{_sysconfdir}/xdg/xfce4/desktop
@@ -120,6 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.sk
 %lang(ta) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ta
 %lang(tr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.tr
+%lang(uk) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.uk
 %lang(vi) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.vi
 %lang(zh_CN) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_CN
 %lang(zh_TW) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_TW
@@ -127,6 +124,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml
 %lang(nl) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.nl
 %lang(pt_BR) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.pt_BR
+%lang(ro) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ro
+%lang(ru) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ru
 %lang(zh_TW) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_TW
 %{_desktopdir}/*.desktop
 %{_datadir}/xfce4/backdrops
