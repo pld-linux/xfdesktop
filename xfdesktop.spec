@@ -2,32 +2,32 @@
 # - %{_libdir}/xfce4/modules have to belong somewhere (but where?)
 # belongs to libxfcegui4
 
-%define		_snap 20040806
+%define		_snap 20040813
 
 Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
-Version:	4.2.0
+Version:	4.1.6
 Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	7961e95bae08d9834680b5e6f3fd7027
+# Source0-md5:	94f2c7a3ace9f47271b43105ba4a8413
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	intltool
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= %{version}
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libxfce4mcs-devel >= 4.1.0
+BuildRequires:	libxfcegui4-devel >= 4.1.25
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= %{version}
+BuildRequires:	xfce-mcs-manager-devel >= 4.1.0
 Requires:	gtk+2 >= 2.2.0
-Requires:	libxfce4mcs >= %{version}
-Requires:	libxfcegui4 >= %{version}
-Requires:	xfce4-panel >= %{version}
-Requires:	xfce-mcs-manager >= %{version}
+Requires:	libxfce4mcs >= 4.1.0
+Requires:	libxfcegui4 >= 4.1.25
+Requires:	xfce4-panel >= 4.1.0
+Requires:	xfce-mcs-manager >= 4.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -68,9 +68,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO
 %docdir %{_datadir}/xfce4/doc
-%{_datadir}/xfce4/doc/C
-%lang(fr) %{_datadir}/xfce4/doc/fr
-%lang(it) %{_datadir}/xfce4/doc/it
+%{_datadir}/xfce4/doc/C/*
+%lang(fr) %{_datadir}/xfce4/doc/fr/*
+%lang(it) %{_datadir}/xfce4/doc/it/*
 
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/*/*.so
