@@ -17,8 +17,9 @@ Patch2:		%{name}-vfmg.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	intltool
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 1:2.2.0
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
