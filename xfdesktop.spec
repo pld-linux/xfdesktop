@@ -92,8 +92,5 @@ vfmg -i -f -x -c -u xfce4 > %{_sysconfdir}/xfce4/menu2.xml 2>/dev/null
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
-# these dirs to be moved to more common xfce package?
-%lang(fr) %dir %{_datadir}/xfce4/doc/fr
-%lang(fr) %dir %{_datadir}/xfce4/doc/fr/images
 %lang(fr) %{_datadir}/xfce4/doc/fr/*.html
 %lang(fr) %{_datadir}/xfce4/doc/fr/images/*
