@@ -53,7 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
-# /etc/xfce4 belongs to xfce-utils at the moment
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml
 %{_datadir}/xfce4/backdrops
 %docdir %{_datadir}/xfce4/doc
