@@ -1,13 +1,13 @@
 Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
-Version:	4.0.5
-Release:	6
+Version:	4.0.6
+Release:	1
 License:	GPL
 Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	eef02de6de0ac2b8343f4ce2c2f8cf12
+# Source0-md5:	8f7a87ada82eaa60fb37998553787002
 Patch0:		%{name}-menu.patch
 Patch1:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
@@ -17,11 +17,15 @@ BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	startup-notification-devel
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 Requires(post):	vfmg >= 0.9.16-2
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
+Requires:	libxml2 >= 2.4.0
+Requires:	startup-notification
 Requires:	vfmg > 0.9.16-2
 Requires:	xfce-mcs-manager >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
