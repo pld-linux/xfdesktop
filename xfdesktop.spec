@@ -1,19 +1,16 @@
  
 # - %{_libdir}/xfce4/modules have to belong somewhere (but where?)
 # belongs to libxfcegui4
-
-%define		_snap 20040816
-
 Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
-Version:	4.1.6
-Release:	0.%{_snap}.1
+Version:	4.1.90
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
+Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	ea8a3ac5a8644568c9e1a18ee707a5b6
 Patch0:		%{name}-locale-names.patch
-# Source0-md5:	671f2f41e77c6087610ebe5dcf55af53
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -41,7 +38,7 @@ xfdesktop contain a desktop manager for the XFce Desktop Environment.
 xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 %patch0 -p1
 
 mv -f po/{fa_IR,fa}.po
@@ -84,24 +81,30 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/*/*.so
 
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml
-%lang(az) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.az
-%lang(ca) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.ca
-%lang(de) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.de
-%lang(es) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.es
-%lang(eu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.eu
-%lang(fa) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.fa
-%lang(fr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.fr
-%lang(hu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.hu
-%lang(ms) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.ms
-%lang(nl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.nl
-%lang(ta) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.ta
-%lang(tr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.tr
-%lang(vi) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.vi
-%lang(zh_CN) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.zh_CN
-%lang(zh_TW) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.zh_TW
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml
+%lang(az) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.az
+%lang(ca) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ca
+%lang(de) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.de
+%lang(es) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.es
+%lang(eu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.eu
+%lang(fa) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fa
+%lang(fr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fr
+%lang(he) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.he
+%lang(hu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.hu
+%lang(ms) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ms
+%lang(nl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nl
+%lang(ro) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ro
+%lang(ru) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ru
+%lang(sk) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.sk
+%lang(ta) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ta
+%lang(tr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.tr
+%lang(vi) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.vi
+%lang(zh_CN) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_CN
+%lang(zh_TW) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_TW
 
-%{_sysconfdir}/xfce4/xfce-registered-categories.xml
+%{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml
+%lang(nl) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.nl
+%lang(zh_TW) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_TW
 %{_desktopdir}/*.desktop
 %{_datadir}/xfce4/backdrops
 %{_datadir}/pixmaps/*
