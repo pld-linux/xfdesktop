@@ -24,11 +24,13 @@ BuildRequires:	libxfcegui4-devel >= 4.1.25
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= 4.1.0
 BuildRequires:	xfce4-panel-devel >= 4.1.0
+BuildRequires:	libxml2-devel >= 2.4.0
 Requires:	gtk+2 >= 2.2.0
 Requires:	libxfce4mcs >= 4.1.0
 Requires:	libxfcegui4 >= 4.1.25
 Requires:	xfce4-panel >= 4.1.0
 Requires:	xfce-mcs-manager >= 4.1.0
+Requires:	libxml2 >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
