@@ -23,7 +23,7 @@ BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	libxml2-devel >= 2.4.0
-BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= 4.1.0
 BuildRequires:	xfce4-panel-devel >= %{version}
 %{?with_vfmg:Requires(post):	vfmg >= 0.9.18-8}
