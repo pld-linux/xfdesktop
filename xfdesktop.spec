@@ -6,8 +6,8 @@ Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
 Name:		xfdesktop
 Version:	4.1.99.3
-Release:	1
-License:	GPL
+Release:	2
+License:	GPL v2
 Group:		X11/Applications
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	d5243949be5200f0678f4d5754d3e8ce
@@ -24,16 +24,9 @@ BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= 4.1.0
+BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-panel-devel >= %{version}
 %{?with_vfmg:Requires(post):	vfmg >= 0.9.18-8}
-Requires:	gtk+2 >= 1:2.2.0
-Requires:	libxfce4mcs >= %{version}
-Requires:	libxfcegui4 >= %{version}
-Requires:	libxml2 >= 2.4.0
-%{?with_vfmg:Requires:	vfmg >= 0.9.18-8}
-Requires:	xfce-mcs-manager >= 4.1.0
-Requires:	xfce4-panel >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -131,6 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml
 %lang(nl) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.nl
+%lang(pt_BR) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.pt_BR
 %lang(zh_TW) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_TW
 %{_desktopdir}/*.desktop
 %{_datadir}/xfce4/backdrops
