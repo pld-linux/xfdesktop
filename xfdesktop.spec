@@ -5,12 +5,12 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
 Name:		xfdesktop
-Version:	4.2.0
+Version:	4.2.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.us.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	1cacd48e0ab475f4fd55d79020d60c55
+Source0:        http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
+# Source0-md5:	27f2d30695b73702846d07d71d0f39e0
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-menu.patch
 Patch2:		%{name}-vfmg.patch
@@ -98,14 +98,17 @@ rm -rf $RPM_BUILD_ROOT
 %{?with_vfmg:%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu2.xml}
 %lang(az) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.az
 %lang(ca) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ca
+%lang(da) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.da
 %lang(de) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.de
 %lang(es) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.es
 %lang(et) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.et
 %lang(eu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.eu
 %lang(fa) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fa
+%lang(fi) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fi
 %lang(fr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fr
 %lang(he) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.he
 %lang(hu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.hu
+%lang(ja) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ja
 %lang(ko) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ko
 %lang(ms) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ms
 %lang(nl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nl
@@ -122,10 +125,15 @@ rm -rf $RPM_BUILD_ROOT
 %lang(zh_TW) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_TW
 
 %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml
+%lang(fi) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.fi
+%lang(hu) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.hu
+%lang(ja) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ja
 %lang(nl) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.nl
 %lang(pt_BR) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.pt_BR
 %lang(ro) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ro
 %lang(ru) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ru
+%lang(sk) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.sk
+%lang(zh_CN) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_CN
 %lang(zh_TW) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_TW
 %{_desktopdir}/*.desktop
 %{_datadir}/xfce4/backdrops
