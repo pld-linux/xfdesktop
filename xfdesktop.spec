@@ -101,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(it) %{_datadir}/xfce4/doc/it/images/*.png
 %{_mandir}/man1/*.1*
 
+%dir %{_sysconfdir}/xdg/xfce4/desktop
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml
 %{?with_vfmg:%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu2.xml}
 %lang(az) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.az
