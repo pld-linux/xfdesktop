@@ -19,13 +19,11 @@ BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	startup-notification-devel
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 Requires(post):	vfmg >= 0.9.16-2
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	libxml2 >= 2.4.0
-Requires:	startup-notification
 Requires:	vfmg > 0.9.16-2
 Requires:	xfce-mcs-manager >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
