@@ -8,6 +8,7 @@ Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	eef02de6de0ac2b8343f4ce2c2f8cf12
+Patch0:		%{name}-menu.patch
 URL:		http://www.xfce.org/
 BuildRequires:	automake
 BuildRequires:	intltool
@@ -29,6 +30,7 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 #rm -f missing
