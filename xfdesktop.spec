@@ -1,20 +1,20 @@
 Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
-Version:	3.99.2
+Version:	3.99.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://linux.imp.mx/xfce4/rc2/xfce4-rc2/src/%{name}-%{version}.tar.gz
-# Source0-md5:	d9ae203f5f23abe17feea1181b9aca08
+Source0:	http://www.xfce.org/archive/xfce4-rc3/src/%{name}-%{version}.tar.gz
+# Source0-md5:	298c03e496ee042be0b76d0b0a871f9d
 URL:		http://www.xfce.org/
 BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= 3.99.2
-BuildRequires:	libxfcegui4-devel >= 3.99.2
+BuildRequires:	libxfcegui4-devel >= 3.99.3
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= 3.99.2
 Requires:	libxfce4mcs >= 3.99.2
-Requires:	libxfcegui4 >= 3.99.2
+Requires:	libxfcegui4 >= 3.99.3
 Requires:	xfce-mcs-manager >= 3.99.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.*
 %{_datadir}/xfce4/backdrops
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*.html
