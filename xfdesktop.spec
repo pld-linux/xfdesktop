@@ -9,9 +9,12 @@ Group:		X11/Applications
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	eef02de6de0ac2b8343f4ce2c2f8cf12
 Patch0:		%{name}-menu.patch
+Patch1:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	intltool
+BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
@@ -32,11 +35,18 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{no,nb}.po
 
 %build
 glib-gettextize --copy --force
 intltoolize --copy --force
-cp -f /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 
 %{__make}
@@ -80,5 +90,10 @@ vfmg -i -f -x -c -u xfce4 > %{_sysconfdir}/xfce4/menu2.xml 2>/dev/null
 %lang(zh_TW) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.zh_TW
 %{_datadir}/xfce4/backdrops
 %docdir %{_datadir}/xfce4/doc
-%{_datadir}/xfce4/doc/*/*.html
-%{_datadir}/xfce4/doc/*/images/*
+%{_datadir}/xfce4/doc/C/*.html
+%{_datadir}/xfce4/doc/C/images/*
+# these dirs to be moved to more common xfce package?
+%lang(fr) %dir %{_datadir}/xfce4/doc/fr
+%lang(fr) %dir %{_datadir}/xfce4/doc/fr/images
+%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+%lang(fr) %{_datadir}/xfce4/doc/fr/images/*
