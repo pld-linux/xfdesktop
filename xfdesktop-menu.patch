@@ -1,139 +1,28 @@
-diff -urN xfdesktop-4.0.5.orig/Makefile.am xfdesktop-4.0.5/Makefile.am
---- xfdesktop-4.0.5.orig/Makefile.am	2004-03-21 18:44:55.000000000 +0100
-+++ xfdesktop-4.0.5/Makefile.am	2004-07-07 21:21:39.344793720 +0200
-@@ -13,6 +13,7 @@
- 	menu.xml.ca 							\
+diff -urN xfdesktop-4.1.99.1.orig/Makefile.am xfdesktop-4.1.99.1/Makefile.am
+--- xfdesktop-4.1.99.1.orig/Makefile.am	2004-11-11 14:05:24.000000000 +0100
++++ xfdesktop-4.1.99.1/Makefile.am	2004-11-27 17:57:02.699411848 +0100
+@@ -46,6 +46,7 @@
  	menu.xml.hu 							\
- 	menu.xml.it 							\
-+	menu.xml.pl 							\
- 	menu.xml.ta 							\
- 	menu.xml.tr 							\
- 	menu.xml.vi 							\
-diff -urN xfdesktop-4.0.5.orig/Makefile.in xfdesktop-4.0.5/Makefile.in
---- xfdesktop-4.0.5.orig/Makefile.in	2004-04-13 22:56:02.000000000 +0200
-+++ xfdesktop-4.0.5/Makefile.in	2004-07-07 21:21:58.844829264 +0200
-@@ -223,6 +223,7 @@
- 	menu.xml.ca 							\
- 	menu.xml.hu 							\
- 	menu.xml.it 							\
-+	menu.xml.pl 							\
- 	menu.xml.ta 							\
- 	menu.xml.tr 							\
- 	menu.xml.vi 							\
-diff -urN xfdesktop-4.0.5.orig/menu.xml xfdesktop-4.0.5/menu.xml
---- xfdesktop-4.0.5.orig/menu.xml	2003-06-04 23:54:32.000000000 +0200
-+++ xfdesktop-4.0.5/menu.xml	2004-07-07 21:21:39.345793568 +0200
-@@ -55,11 +55,13 @@
-     <app name="File Manager (xffm)" cmd="xffm"/>
-     <app name="Web Browser" cmd="mozilla"/>
-     <separator/>
-+    &menu2;
-     <menu name="Settings" visible="yes">
-         <app name="All Settings..." cmd="xfce-setting-show"/>
-         <app name="Backdrop..." cmd="xfce-setting-show backdrop"/>
- <!-- 
-         <app name="Background" cmd="xfce-setting-show backdrop"/>
-+-->
- 	<app name="Workspaces" cmd="xfce-setting-show workspaces"/>
- 	<app name="File manager (xffm)" cmd="xfce-setting-show xffm"/>
- 	<app name="User interface (gtk+)" cmd="xfce-setting-show ui"/>
-@@ -70,7 +72,6 @@
- 	<app name="Window manager" cmd="xfce-setting-show xfwm4"/>
- 	<app name="Margins" cmd="xfce-setting-show xfwm_margins"/>
- 	<app name="Panel" cmd="xfce-setting-show xfce"/>
---->
-     </menu>
-     <separator/>
-     <app name="Help" cmd="xfhelp4"/>
-diff -urN xfdesktop-4.0.5.orig/menu.xml.de xfdesktop-4.0.5/menu.xml.de
---- xfdesktop-4.0.5.orig/menu.xml.de	2003-08-04 23:46:41.000000000 +0200
-+++ xfdesktop-4.0.5/menu.xml.de	2004-07-07 21:21:39.345793568 +0200
-@@ -61,11 +61,13 @@
-     <app name="Dateimanager (xffm)" cmd="xffm"/>
-     <app name="Mozilla (Web-Browser)" cmd="mozilla"/>
-     <separator/>
-+    &menu2;
-     <menu name="Einstellungen" visible="yes">
-         <app name="Alle Einstellungen ..." cmd="xfce-setting-show"/>
-         <app name="Hintergrund ..." cmd="xfce-setting-show backdrop"/>
- <!-- 
-         <app name="Hintergrund" cmd="xfce-setting-show backdrop"/>
-+-->
- 	<app name="Workspaces" cmd="xfce-setting-show workspaces"/>
- 	<app name="Dateimanager (xffm)" cmd="xfce-setting-show xffm"/>
- 	<app name="Benutzerschnittstelle (Gtk+)" cmd="xfce-setting-show ui"/>
-@@ -76,7 +78,6 @@
- 	<app name="Fenstermanager" cmd="xfce-setting-show xfwm4"/>
- 	<app name="Desktopränder" cmd="xfce-setting-show xfwm_margins"/>
- 	<app name="Panel" cmd="xfce-setting-show xfce"/>
---->
-     </menu>
-     <separator/>
-     <app name="Hilfe" cmd="xfhelp4"/>
-diff -urN xfdesktop-4.0.5.orig/menu.xml.fr xfdesktop-4.0.5/menu.xml.fr
---- xfdesktop-4.0.5.orig/menu.xml.fr	2003-08-03 18:53:30.000000000 +0200
-+++ xfdesktop-4.0.5/menu.xml.fr	2004-07-07 21:21:39.346793416 +0200
-@@ -55,11 +55,13 @@
-     <app name="Gestionnaire de fichiers (xffm)" cmd="xffm"/>
-     <app name="Navigateur web" cmd="mozilla"/>
-     <separator/>
-+    &menu2;
-     <menu name="Paramètres" visible="yes">
-         <app name="Tous les paramètres..." cmd="xfce-setting-show"/>
-         <app name="Fond d'écran..." cmd="xfce-setting-show backdrop"/>
- <!-- 
-         <app name="Fond d'écran" cmd="xfce-setting-show backdrop"/>
-+-->
- 	<app name="Espaces virtuels" cmd="xfce-setting-show workspaces"/>
- 	<app name="Gestionnaire de fichiers (xffm)" cmd="xfce-setting-show xffm"/>
- 	<app name="Interface utilisateur (gtk+)" cmd="xfce-setting-show ui"/>
-@@ -70,7 +72,6 @@
- 	<app name="Gestionnaire de fenêtres" cmd="xfce-setting-show xfwm4"/>
- 	<app name="Marges" cmd="xfce-setting-show xfwm_margins"/>
- 	<app name="Panneau" cmd="xfce-setting-show xfce"/>
---->
-     </menu>
-     <separator/>
-     <app name="Aide" cmd="xfhelp4"/>
-diff -urN xfdesktop-4.0.5.orig/menu.xml.hu xfdesktop-4.0.5/menu.xml.hu
---- xfdesktop-4.0.5.orig/menu.xml.hu	2003-09-13 14:28:03.000000000 +0200
-+++ xfdesktop-4.0.5/menu.xml.hu	2004-07-07 21:21:39.347793264 +0200
-@@ -55,11 +55,13 @@
-     <app name="Fájlkezelő (xffm)" cmd="xffm"/>
-     <app name="Böngésző" cmd="mozilla"/>
-     <separator/>
-+    &menu2;
-     <menu name="Beállítások" visible="yes">
-         <app name="Beállításkezelő..." cmd="xfce-setting-show"/>
-         <app name="Háttér..." cmd="xfce-setting-show backdrop"/>
- <!-- 
-         <app name="Háttér" cmd="xfce-setting-show backdrop"/>
-+-->
- 	<app name="Munkaterületek" cmd="xfce-setting-show workspaces"/>
- 	<app name="Fájlkezelő (xffm)" cmd="xfce-setting-show xffm"/>
- 	<app name="Felhasználói felület (gtk+)" cmd="xfce-setting-show ui"/>
-@@ -70,7 +72,6 @@
- 	<app name="Ablakkezelő" cmd="xfce-setting-show xfwm4"/>
- 	<app name="Margók" cmd="xfce-setting-show xfwm_margins"/>
- 	<app name="Panel" cmd="xfce-setting-show xfce"/>
---->
-     </menu>
-     <separator/>
-     <app name="Súgó" cmd="xfhelp4"/>
-diff -urN xfdesktop-4.0.5.orig/menu.xml.pl xfdesktop-4.0.5/menu.xml.pl
---- xfdesktop-4.0.5.orig/menu.xml.pl	1970-01-01 01:00:00.000000000 +0100
-+++ xfdesktop-4.0.5/menu.xml.pl	2004-07-07 21:21:39.348793112 +0200
-@@ -0,0 +1,95 @@
+ 	menu.xml.ms  							\
+ 	menu.xml.nl  							\
++	menu.xml.pl  							\
+ 	menu.xml.pt_BR							\
+ 	menu.xml.ro							\
+ 	menu.xml.ru							\
+diff -urN xfdesktop-4.1.99.1.orig/menu.xml.pl xfdesktop-4.1.99.1/menu.xml.pl
+--- xfdesktop-4.1.99.1.orig/menu.xml.pl	1970-01-01 01:00:00.000000000 +0100
++++ xfdesktop-4.1.99.1/menu.xml.pl	2004-11-27 17:53:43.000000000 +0100
+@@ -0,0 +1,101 @@
 +<?xml version="1.0" encoding="UTF-8"?>
-+<!DOCTYPE xfdesktop-menu [
-+	<!ENTITY menu2 SYSTEM "menu2.xml">
-+]>
++<!DOCTYPE xfdesktop-menu>
 +
 +<!-- 
 +     Opis pliku menu do XFce 4: 
 +     =================================
 +     Tutaj postaramy się wyjaśnić format pliku menu. Spójrz na menu poniżej
-+     by zobaczyć jak to wygląda w praktyce.
++     by zobaczyć jak to wygląda w praktyce.  Prawde mówiąc nie powinieneś
++     mieć potrzeby edytowania tego pliku ręcznie; sprawdź wzamian
++     xfce4-menueditor.
 +-->
 +
 +<!-- Oczywiście w ten sposób robi się komentarze ;-) -->
@@ -144,78 +33,84 @@ diff -urN xfdesktop-4.0.5.orig/menu.xml.pl xfdesktop-4.0.5/menu.xml.pl
 +    <xfdesktop-menu></xfdesktop-menu> tagów.
 +
 +  + Aplikacje:
-+    <app name="Nazwa w menu" cmd="Komenda do uruchomienia" term="no" visible="yes" />
-+    'term' określa czy program wymaga terminala do działania
++    <app name="Nazwa w menu" cmd="Komenda do uruchomienia" term="false"
++         icon="ikona"  snotify="false" visible="true" />
++    Atrybut 'term' określa czy program wymaga terminala do działania
++    a 'snotify' ustala czy program obsługuje informowanie o starcie.
++    Możesz wskazać ikonę do wyświetlenia za pomocą atrubutu 'icon'.
 +    Tylko 'name i 'cmd' sa wymagane.
 +
 +  + Separatory:
-+    <separator/>
++    <separator visible="true" />
++    Tworzy poziomy separator.  Atrybut 'visible' powinien być ustawiony.
 +
 +  + Podmenu:
-+    <menu name="Nazwa w menu" visible="yes"></menu>
-+    Tylko 'name' jest wymagane.
-+    Pomiędzy tagami menu możesz zdefiniować więcej apliakcji, separatorów
-+    i innych menu.
++    <menu name="Nazwa w menu" icon="ikona" visible="true"></menu>
++    Tylko 'name' jest wymagane, ale możesz także ustawić ikonę do
++    wyświetlania za pomocą atrybutu 'icon'. Pomiędzy tagami menu możesz
++    zdefiniować więcej apliakcji, separatorów i innych menu.
 +
 +  + Tytuły:
-+    <title name="Nazwa w menu" />
-+    Tworzy tytuł menu.
++    <title name="Nazwa w menu" icon="ikona" visible="true" />
++    Tworzy tytuł menu.  Możesz także dodać opconalną ikonę jeśli masz na
++    to ochotę.
 +    
-+  + Zamieranie innych plików:
-+    Inne pliki mogą być zawierane poprzez użycie triku xml. Jest to troszkę
-+    skomplikowane.
-+    Po pierwsze musisz zdefiniować tak zwane entity w nagłówku pliku. Spójrz
-+    powyżej w miejsce gdzie definiujemy entity 'menu2' wskazujące na plik
-+    "menu2.xml".
-+    Następnie możesz użyć '&entityname;' gdziekolwiek w pliku i będzie ono
-+    zamienione zawartością pliku na który wskazuje entity.
-+    Może to być przydatne jeśli tworzysz skrypt generujący menu (np. za pomocą
-+    vfmg) i umieszczasz je w oddzielnym pliku.
-+    
-+-->
-+<xfdesktop-menu>
-+    <title name="Menu Pulpitu" visible="yes" />
-+    <separator/>
-+    <app name="Uruchom Program" cmd="xfrun4"/>
-+    <separator/>
-+    <app name="Terminal" cmd="xfterm4" />
-+    <app name="Menadżer plików (xffm)" cmd="xffm"/>
-+    <app name="Przeglądarka WWW" cmd="mozilla"/>
-+    <separator/>
-+    &menu2;
-+    <menu name="Ustawienia" visible="yes">
-+        <app name="Wszystke Ustawienia..." cmd="xfce-setting-show"/>
-+	<app name="Tło..." cmd="xfce-setting-show backdrop"/>
-+<!-- 
-+        <app name="Background" cmd="xfce-setting-show backdrop"/>
-+-->
-+	<app name="Pulpity wirtulne" cmd="xfce-setting-show workspaces"/>
-+	<app name="Menadżer plików (xffm)" cmd="xfce-setting-show xffm"/>
-+	<app name="User interface (gtk+)" cmd="xfce-setting-show ui"/>
-+	<app name="Icon box" cmd="xfce-setting-show xfibx"/>
-+        <app name="Mysz" cmd="xfce-setting-show mouse"/>
-+	<app name="Pasek zadań" cmd="xfce-setting-show taskbar"/>
-+	<app name="Klawiatura" cmd="xfce-setting-show keyboard"/>
-+	<app name="Menadżer okien" cmd="xfce-setting-show xfwm4"/>
-+	<app name="Marginesy" cmd="xfce-setting-show xfwm_margins"/>
-+	<app name="Panel" cmd="xfce-setting-show xfce"/>
-+    </menu>
-+    <separator/>
-+    <app name="Pomoc" cmd="xfhelp4"/>
-+    <!-- <separator/> -->
-+    <!-- Ustaw visible na yes żeby użyć tego wpisu.
-+      Zakończy on menadżera pulpitu. Także jeśli dopiszesz
-+      'exec xfdesktop' na końcu swojego ~/.Xclients, ten wpis w menu może być
-+      użyty do zakończenia sesji X.
-+    -->
-+    <builtin name="Zakończ" cmd="quit" visible="no"/>
-+    <!-- Przykład zawierania innych plików:
-+      1) zadeklaruj ENTITY w tagu DOCTYPE (patrz wyżej)
-+      2) include entity in file:
-+      2) zawieraj plik:
-+    -->
-+    <!--
-+    &menu2;
-+    -->
-+</xfdesktop-menu>
++  + Zawieranie innych plików:
++    <include type="file" src="menu2.xml" visible="true" />
++    Zawiera plik menu2.xml.  Względna ścieżka zakłada, że plik jest
++    umiejscowiony w ~/.xfce4/.  Bezwględna ścieżka bedzie traktowana
++    normalnie.
 +
++  + Zawieranie autogenerowanego menu:
++    <include type="system" style="simple" unique="true" visible="true" />
++    Zawiera menu systemowe.  'style' może być "simple" lub "multilevel".
++    Jeśli 'unique' jest ustawione na "false", wielokrotne wpisy menu będą
++    generowane jeśli aplikacja pojawia sie w wielu kategoriach.
++-->
++
++<xfdesktop-menu>
++
++	<title name="Menu Pulpitu" icon="xfce4-backdrop"/>
++
++	<separator/>
++
++	<app name="Uruchom Program" cmd="xfrun4" icon="gnome-fs-executable"/>
++
++	<separator/>
++
++	<app name="Terminal" cmd="xfterm4" icon="gnome-terminal"/>
++	<app name="Menadżer plików (xffm)" cmd="xffm" icon="file-manager"/>
++	<app name="Przeglądarka WWW" cmd="mozilla" icon="gnome-globe"/>
++
++	<separator/>
++
++	<menu name="Ustawienia" icon="gnome-settings">
++		<app name="Menadżer ustawień" cmd="xfce-setting-show" icon="gnome-settings"/>
++	</menu>
++
++	<separator/>
++
++	<!--
++	  Następna linia zawiera autogenerowane mnue na obecnym poziomie.
++	  Jeśli chcesz, możesz zamieścić to we własnym podmenu.
++	-->
++	<include type="system" style="simple" unique="true"/>
++
++	<!--
++	  Odkomentuj poniższą linie (i zakomentuj powyższą) jeśli wolisz raczej
++	  zawrzeć oddzielny plik z menu zamiast używać autogenerowanego menu.
++	-->
++	<!-- <include type="file" src="menu2.xml"/> -->
++	
++    <separator/>
++    
++    <app name="Pomoc" cmd="xfhelp4" icon="gnome-help"/>
++    <app name="O Xfce" cmd="xfce4-about" icon="gnome-info"/>
++    <!--
++      Poniższe spowoduje zakończenie xfce4-session, po uprzednim
++      wyświetleniu dialogu "Log out".  Jeśli xfce4-session nie jest
++      uruchomione, spowoduje zakończenie xfdesktop.
++    -->
++    <builtin name="Zakończ" cmd="quit" icon="gnome-logout"/>
++
++</xfdesktop-menu>
