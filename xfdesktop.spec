@@ -80,5 +80,5 @@ vfmg -i -f -x -c -u xfce4 > %{_sysconfdir}/xfce4/menu2.xml 2>/dev/null
 %lang(zh_TW) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.zh_TW
 %{_datadir}/xfce4/backdrops
 %docdir %{_datadir}/xfce4/doc
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*
+%{_datadir}/xfce4/doc/*/*.html
+%{_datadir}/xfce4/doc/*/images/*
