@@ -16,10 +16,11 @@ BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
+Requires(post):	vfmg >= 0.9.16-2
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
-Requires:	xfce-mcs-manager >= %{version}
 Requires:	vfmg > 0.9.16-2
+Requires:	xfce-mcs-manager >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,7 +34,6 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 %patch0 -p1
 
 %build
-#rm -f missing
 glib-gettextize --copy --force
 intltoolize --copy --force
 cp -f /usr/share/automake/config.sub .
