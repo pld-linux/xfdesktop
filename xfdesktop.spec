@@ -1,18 +1,18 @@
-# 
-# TODO:
+ 
 # - %{_libdir}/xfce4/modules have to belong somewhere (but where?)
-#
-%define		snap 20040617
-#
+# belongs to libxfcegui4
+
+%define		_snap 20040806
+
 Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
-Version:	4.1.0
-Release:	0.%{snap}.1
+Version:	4.2.0
+Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
-Source0:	%{name}-snap-%{snap}.tar.bz2
-# Source0-md5:	7070804f081dce2c877af2b10437e22d
+Source0:	http://ep09.pld-linux.org/~havner/%{name}-%{_snap}.tar.bz2
+# Source0-md5:	7961e95bae08d9834680b5e6f3fd7027
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -70,6 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C
 %lang(fr) %{_datadir}/xfce4/doc/fr
+%lang(it) %{_datadir}/xfce4/doc/it
 
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/*/*.so
