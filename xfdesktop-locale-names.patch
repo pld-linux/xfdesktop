@@ -1,0 +1,11 @@
+--- xfdesktop-4.0.5/configure.ac.orig	2004-03-14 22:42:16.000000000 +0100
++++ xfdesktop-4.0.5/configure.ac	2004-07-07 23:10:33.202731827 +0200
+@@ -28,7 +28,7 @@
+ 
+ dnl Check for i18n support
+ BM_I18N([xfdesktop], [ar az bg ca cs de es es_MX fa_IR fi fr hi hu it ja pl
+-	 ko lt ms nl no pl pt_BR pt_PT ru sv ta tr uk vi zh_CN zh_TW])
++	 ko lt ms nl nb pl pt_BR pt_PT ru sv ta tr uk vi zh_CN zh_TW])
+ 
+ dnl Check for X11 installed
+ BM_LIBX11_REQUIRE
