@@ -1,25 +1,28 @@
-diff -urN xfdesktop-4.2.0/Makefile.am.orig xfdesktop-4.2.0/Makefile.am
---- xfdesktop-4.2.0/Makefile.am.orig	2005-01-06 21:33:45.000000000 +0100
-+++ xfdesktop-4.2.0/Makefile.am	2005-01-17 13:55:38.475048416 +0100
-@@ -40,13 +40,14 @@
+diff -urN xfdesktop-4.2.1/Makefile.am fix/xfdesktop-4.2.1/Makefile.am
+--- xfdesktop-4.2.1/Makefile.am	2005-03-05 12:47:59.000000000 +0100
++++ fix/xfdesktop-4.2.1/Makefile.am	2005-03-16 04:36:46.861483904 +0100
+@@ -41,7 +41,7 @@
  	menu.xml.es							\
  	menu.xml.et							\
  	menu.xml.eu							\
 -	menu.xml.fa_IR 							\
-+	menu.xml.fa							\
++	menu.xml.fa 							\
+ 	menu.xml.fi							\
  	menu.xml.fr 							\
  	menu.xml.he							\
- 	menu.xml.hu 							\
+@@ -49,7 +49,8 @@
+ 	menu.xml.ja							\
  	menu.xml.ko							\
  	menu.xml.ms  							\
- 	menu.xml.nl  							\
-+	menu.xml.pl  							\
+-	menu.xml.nl  							\
++	menu.xml.nl							\
++	menu.xml.pl							\
  	menu.xml.pt_BR							\
  	menu.xml.ro							\
  	menu.xml.ru							\
-diff -urN xfdesktop-4.1.99.1.orig/menu.xml.pl xfdesktop-4.1.99.1/menu.xml.pl
---- xfdesktop-4.1.99.1.orig/menu.xml.pl	1970-01-01 01:00:00.000000000 +0100
-+++ xfdesktop-4.1.99.1/menu.xml.pl	2004-11-27 17:53:43.000000000 +0100
+diff -urN xfdesktop-4.2.1/menu.xml.pl fix/xfdesktop-4.2.1/menu.xml.pl
+--- xfdesktop-4.2.1/menu.xml.pl	1970-01-01 01:00:00.000000000 +0100
++++ fix/xfdesktop-4.2.1/menu.xml.pl	2005-03-16 04:50:50.000000000 +0100
 @@ -0,0 +1,101 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<!DOCTYPE xfdesktop-menu>
@@ -37,10 +40,10 @@ diff -urN xfdesktop-4.1.99.1.orig/menu.xml.pl xfdesktop-4.1.99.1/menu.xml.pl
 +
 +<!-- 
 +
-+  + Wszystko musi znajdować sie pomiędzy dokładnie jedną parą 
++   Wszystko musi znajdować sie pomiędzy dokładnie jedną parą 
 +    <xfdesktop-menu></xfdesktop-menu> tagów.
 +
-+  + Aplikacje:
++   + Aplikacje:
 +    <app name="Nazwa w menu" cmd="Komenda do uruchomienia" term="false"
 +         icon="ikona"  snotify="false" visible="true" />
 +    Atrybut 'term' określa czy program wymaga terminala do działania
@@ -48,28 +51,28 @@ diff -urN xfdesktop-4.1.99.1.orig/menu.xml.pl xfdesktop-4.1.99.1/menu.xml.pl
 +    Możesz wskazać ikonę do wyświetlenia za pomocą atrubutu 'icon'.
 +    Tylko 'name i 'cmd' sa wymagane.
 +
-+  + Separatory:
++   + Separatory:
 +    <separator visible="true" />
 +    Tworzy poziomy separator.  Atrybut 'visible' powinien być ustawiony.
 +
-+  + Podmenu:
++   + Podmenu:
 +    <menu name="Nazwa w menu" icon="ikona" visible="true"></menu>
 +    Tylko 'name' jest wymagane, ale możesz także ustawić ikonę do
 +    wyświetlania za pomocą atrybutu 'icon'. Pomiędzy tagami menu możesz
 +    zdefiniować więcej apliakcji, separatorów i innych menu.
 +
-+  + Tytuły:
++   + Tytuły:
 +    <title name="Nazwa w menu" icon="ikona" visible="true" />
 +    Tworzy tytuł menu.  Możesz także dodać opconalną ikonę jeśli masz na
 +    to ochotę.
 +    
-+  + Zawieranie innych plików:
++   + Zawieranie innych plików:
 +    <include type="file" src="menu2.xml" visible="true" />
 +    Zawiera plik menu2.xml.  Względna ścieżka zakłada, że plik jest
 +    umiejscowiony w ~/.xfce4/.  Bezwględna ścieżka bedzie traktowana
 +    normalnie.
 +
-+  + Zawieranie autogenerowanego menu:
++   + Zawieranie autogenerowanego menu:
 +    <include type="system" style="simple" unique="true" visible="true" />
 +    Zawiera menu systemowe.  'style' może być "simple" lub "multilevel".
 +    Jeśli 'unique' jest ustawione na "false", wielokrotne wpisy menu będą

@@ -1,9 +1,9 @@
---- xfdesktop-4.2.0/configure.ac.orig	2005-01-09 13:52:45.000000000 +0100
-+++ xfdesktop-4.2.0/configure.ac	2005-01-17 13:39:57.797053208 +0100
+--- xfdesktop-4.2.1/configure.ac	2005-03-12 15:19:32.000000000 +0100
++++ fix/xfdesktop-4.2.1/configure.ac	2005-03-16 04:31:45.831247456 +0100
 @@ -34,7 +34,7 @@
  
  dnl Check for i18n support
- BM_I18N([xfdesktop], [ar az be bg ca cs de en_GB es es_MX et eu fa fi fr gu \
+ BM_I18N([xfdesktop], [ar az be bg ca cs da de en_GB es es_MX et eu fa fi fr gu \
 -                      he hi hu it ja pl ko lt ms nb_NO nl pa pt_BR pt_PT ro \
 +                      he hi hu it ja pl ko lt ms nb nl pa pt_BR pt ro \
                        ru sk sv ta tr uk vi zh_CN zh_TW])
