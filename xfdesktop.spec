@@ -5,7 +5,8 @@ Version:	4.0.5
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
+#Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	eef02de6de0ac2b8343f4ce2c2f8cf12
 URL:		http://www.xfce.org/
 BuildRequires:	automake
