@@ -1,21 +1,21 @@
 Summary: 	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name: 		xfdesktop
-Version: 	3.91.0
-Release: 	0.1
+Version: 	3.99.2
+Release: 	1
 License:	GPL
 Group: 		X11/Applications
-Source0: 	http://dl.sourceforge.net/xfce/%{name}-%{version}.tar.gz
-# Source0-md5:	42d2f1e5f7f72ab1ebb790acd61aaac0
+Source0: 	http://linux.imp.mx/xfce4/rc2/xfce4-rc2/src/%{name}-%{version}.tar.gz
+# Source0-md5:	d9ae203f5f23abe17feea1181b9aca08
 URL: 		http://www.xfce.org/
 BuildRequires:	intltool
-BuildRequires:	libxfce4mcs-devel >= 0.0.4
-BuildRequires: 	libxfcegui4-devel >= 0.0.17
+BuildRequires:	libxfce4mcs-devel >= 3.99.2
+BuildRequires: 	libxfcegui4-devel >= 3.99.2
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= 0.2.0
-Requires:	libxfce4mcs >= 0.0.4
-Requires:	libxfcegui4 >= 0.0.17
-Requires:	xfce-mcs-manager >= 0.2.0
+BuildRequires:	xfce-mcs-manager-devel >= 3.99.2
+Requires:	libxfce4mcs >= 3.99.2
+Requires:	libxfcegui4 >= 3.99.2
+Requires:	xfce-mcs-manager >= 3.99.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
