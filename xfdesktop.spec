@@ -27,6 +27,8 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-panel-devel >= %{version}
 %{?with_vfmg:Requires: vfmg >= 0.9.18-8}
+Requires:	libxfce4mcs >= %{version}
+Requires:	libxfcegui4 >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
