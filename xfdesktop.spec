@@ -4,12 +4,12 @@
 Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
-Version:	4.1.90
-Release:	0.1
+Version:	4.1.91
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	ea8a3ac5a8644568c9e1a18ee707a5b6
+# Source0-md5:	584be9387a0d15fdff72454395f8da1b
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
@@ -17,16 +17,16 @@ BuildRequires:	automake
 BuildRequires:	intltool
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= 4.1.0
-BuildRequires:	libxfcegui4-devel >= 4.1.25
+BuildRequires:	libxfce4mcs-devel >= %{version}
+BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= 4.1.0
-BuildRequires:	xfce4-panel-devel >= 4.1.0
+BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	libxml2-devel >= 2.4.0
 Requires:	gtk+2 >= 2.2.0
-Requires:	libxfce4mcs >= 4.1.0
-Requires:	libxfcegui4 >= 4.1.25
-Requires:	xfce4-panel >= 4.1.0
+Requires:	libxfce4mcs >= %{version}
+Requires:	libxfcegui4 >= %{version}
+Requires:	xfce4-panel >= %{version}
 Requires:	xfce-mcs-manager >= 4.1.0
 Requires:	libxml2 >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,7 +41,6 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 %setup -q
 %patch0 -p1
 
-mv -f po/{fa_IR,fa}.po
 mv -f po/{pt_PT,pt}.po
 mv -f menu.xml.fa_IR menu.xml.fa
 
@@ -77,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/doc/C/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*
 %lang(it) %{_datadir}/xfce4/doc/it/*
+%{_mandir}/man1/*.1*
 
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/*/*.so
@@ -86,6 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ca) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ca
 %lang(de) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.de
 %lang(es) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.es
+%lang(et) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.et
 %lang(eu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.eu
 %lang(fa) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fa
 %lang(fr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fr
