@@ -1,6 +1,6 @@
 diff -urN xfdesktop-4.0.5.orig/Makefile.am xfdesktop-4.0.5/Makefile.am
 --- xfdesktop-4.0.5.orig/Makefile.am	2004-03-21 18:44:55.000000000 +0100
-+++ xfdesktop-4.0.5/Makefile.am	2004-07-07 19:12:37.262769088 +0200
++++ xfdesktop-4.0.5/Makefile.am	2004-07-07 21:21:39.344793720 +0200
 @@ -13,6 +13,7 @@
  	menu.xml.ca 							\
  	menu.xml.hu 							\
@@ -9,47 +9,20 @@ diff -urN xfdesktop-4.0.5.orig/Makefile.am xfdesktop-4.0.5/Makefile.am
  	menu.xml.ta 							\
  	menu.xml.tr 							\
  	menu.xml.vi 							\
-diff -urN xfdesktop-4.0.5.orig/Makefile.am.orig xfdesktop-4.0.5/Makefile.am.orig
---- xfdesktop-4.0.5.orig/Makefile.am.orig	1970-01-01 01:00:00.000000000 +0100
-+++ xfdesktop-4.0.5/Makefile.am.orig	2004-03-21 18:44:55.000000000 +0100
-@@ -0,0 +1,34 @@
-+@SET_MAKE@
-+
-+SUBDIRS = backdrops common doc po settings src
-+
-+confdir = $(sysconfdir)/xfce4
-+
-+conf_DATA = 								\
-+	menu.xml 							\
-+	menu.xml.az 							\
-+	menu.xml.de 							\
-+	menu.xml.fr 							\
-+	menu.xml.nl  							\
-+	menu.xml.ca 							\
-+	menu.xml.hu 							\
-+	menu.xml.it 							\
-+	menu.xml.ta 							\
-+	menu.xml.tr 							\
-+	menu.xml.vi 							\
-+	menu.xml.zh_CN							\
-+	menu.xml.zh_TW
-+
-+EXTRA_DIST = $(conf_DATA) xfdesktop.spec TODO
-+
-+distclean-local:
-+	-rm -rf xfdesktop.spec *.cache *~
-+
-+rpm: dist
-+	rpmbuild -ta $(PACKAGE)-$(VERSION).tar.gz
-+	@rm -f $(PACKAGE)-$(VERSION).tar.gz
-+
-+html: Makefile
-+	make -C doc html
-+
-+ACLOCAL_AMFLAGS = -I m4
+diff -urN xfdesktop-4.0.5.orig/Makefile.in xfdesktop-4.0.5/Makefile.in
+--- xfdesktop-4.0.5.orig/Makefile.in	2004-04-13 22:56:02.000000000 +0200
++++ xfdesktop-4.0.5/Makefile.in	2004-07-07 21:21:58.844829264 +0200
+@@ -223,6 +223,7 @@
+ 	menu.xml.ca 							\
+ 	menu.xml.hu 							\
+ 	menu.xml.it 							\
++	menu.xml.pl 							\
+ 	menu.xml.ta 							\
+ 	menu.xml.tr 							\
+ 	menu.xml.vi 							\
 diff -urN xfdesktop-4.0.5.orig/menu.xml xfdesktop-4.0.5/menu.xml
 --- xfdesktop-4.0.5.orig/menu.xml	2003-06-04 23:54:32.000000000 +0200
-+++ xfdesktop-4.0.5/menu.xml	2004-07-07 19:12:37.264768784 +0200
++++ xfdesktop-4.0.5/menu.xml	2004-07-07 21:21:39.345793568 +0200
 @@ -55,11 +55,13 @@
      <app name="File Manager (xffm)" cmd="xffm"/>
      <app name="Web Browser" cmd="mozilla"/>
@@ -74,7 +47,7 @@ diff -urN xfdesktop-4.0.5.orig/menu.xml xfdesktop-4.0.5/menu.xml
      <app name="Help" cmd="xfhelp4"/>
 diff -urN xfdesktop-4.0.5.orig/menu.xml.de xfdesktop-4.0.5/menu.xml.de
 --- xfdesktop-4.0.5.orig/menu.xml.de	2003-08-04 23:46:41.000000000 +0200
-+++ xfdesktop-4.0.5/menu.xml.de	2004-07-07 19:12:37.265768632 +0200
++++ xfdesktop-4.0.5/menu.xml.de	2004-07-07 21:21:39.345793568 +0200
 @@ -61,11 +61,13 @@
      <app name="Dateimanager (xffm)" cmd="xffm"/>
      <app name="Mozilla (Web-Browser)" cmd="mozilla"/>
@@ -99,7 +72,7 @@ diff -urN xfdesktop-4.0.5.orig/menu.xml.de xfdesktop-4.0.5/menu.xml.de
      <app name="Hilfe" cmd="xfhelp4"/>
 diff -urN xfdesktop-4.0.5.orig/menu.xml.fr xfdesktop-4.0.5/menu.xml.fr
 --- xfdesktop-4.0.5.orig/menu.xml.fr	2003-08-03 18:53:30.000000000 +0200
-+++ xfdesktop-4.0.5/menu.xml.fr	2004-07-07 19:12:37.266768480 +0200
++++ xfdesktop-4.0.5/menu.xml.fr	2004-07-07 21:21:39.346793416 +0200
 @@ -55,11 +55,13 @@
      <app name="Gestionnaire de fichiers (xffm)" cmd="xffm"/>
      <app name="Navigateur web" cmd="mozilla"/>
@@ -124,7 +97,7 @@ diff -urN xfdesktop-4.0.5.orig/menu.xml.fr xfdesktop-4.0.5/menu.xml.fr
      <app name="Aide" cmd="xfhelp4"/>
 diff -urN xfdesktop-4.0.5.orig/menu.xml.hu xfdesktop-4.0.5/menu.xml.hu
 --- xfdesktop-4.0.5.orig/menu.xml.hu	2003-09-13 14:28:03.000000000 +0200
-+++ xfdesktop-4.0.5/menu.xml.hu	2004-07-07 19:12:37.268768176 +0200
++++ xfdesktop-4.0.5/menu.xml.hu	2004-07-07 21:21:39.347793264 +0200
 @@ -55,11 +55,13 @@
      <app name="Fájlkezelő (xffm)" cmd="xffm"/>
      <app name="Böngésző" cmd="mozilla"/>
@@ -149,7 +122,7 @@ diff -urN xfdesktop-4.0.5.orig/menu.xml.hu xfdesktop-4.0.5/menu.xml.hu
      <app name="Súgó" cmd="xfhelp4"/>
 diff -urN xfdesktop-4.0.5.orig/menu.xml.pl xfdesktop-4.0.5/menu.xml.pl
 --- xfdesktop-4.0.5.orig/menu.xml.pl	1970-01-01 01:00:00.000000000 +0100
-+++ xfdesktop-4.0.5/menu.xml.pl	2004-07-07 19:12:37.269768024 +0200
++++ xfdesktop-4.0.5/menu.xml.pl	2004-07-07 21:21:39.348793112 +0200
 @@ -0,0 +1,95 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<!DOCTYPE xfdesktop-menu [
