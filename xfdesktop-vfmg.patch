@@ -25,7 +25,7 @@ diff -ur xfdesktop-4.1.99.1.orig/menu.xml.pl xfdesktop-4.1.99.1/menu.xml.pl
  	  Jeśli chcesz, możesz zamieścić to we własnym podmenu.
  	-->
 -	<include type="system" style="simple" unique="true"/>
-+	<-- <include type="system" style="simple" unique="true"/> -->
++	<!-- <include type="system" style="simple" unique="true"/> -->
  
  	<!--
  	  Odkomentuj poniższą linie (i zakomentuj powyższą) jeśli wolisz raczej
