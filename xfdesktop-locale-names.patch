@@ -1,22 +1,11 @@
---- xfdesktop-4.1.99.3/configure.ac.orig	2004-12-20 22:00:58.000000000 +0100
-+++ xfdesktop-4.1.99.3/configure.ac	2004-12-28 16:27:41.176372872 +0100
+--- xfdesktop-4.2.0/configure.ac.orig	2005-01-09 13:52:45.000000000 +0100
++++ xfdesktop-4.2.0/configure.ac	2005-01-17 13:39:57.797053208 +0100
 @@ -34,7 +34,7 @@
  
  dnl Check for i18n support
- BM_I18N([xfdesktop], [ar az be bg ca cs de en_GB es es_MX et eu fa fi fr gu
--		      he hi hu it ja pl ko lt ms nb_NO nl pa pt_BR pt_PT ro
-+		      he hi hu it ja pl ko lt ms nb nl pa pt_BR pt ro
- 		      ru sk sv ta tr uk vi zh_CN zh_TW])
+ BM_I18N([xfdesktop], [ar az be bg ca cs de en_GB es es_MX et eu fa fi fr gu \
+-                      he hi hu it ja pl ko lt ms nb_NO nl pa pt_BR pt_PT ro \
++                      he hi hu it ja pl ko lt ms nb nl pa pt_BR pt ro \
+                       ru sk sv ta tr uk vi zh_CN zh_TW])
  
  dnl Check for X11 installed
---- xfdesktop-4.1.99.3/Makefile.am~	2004-12-05 21:50:12.000000000 +0100
-+++ xfdesktop-4.1.99.3/Makefile.am	2004-12-28 16:39:37.406489344 +0100
-@@ -40,7 +40,7 @@
- 	menu.xml.es							\
- 	menu.xml.et							\
- 	menu.xml.eu							\
--	menu.xml.fa_IR 							\
-+	menu.xml.fa 							\
- 	menu.xml.fr 							\
- 	menu.xml.he							\
- 	menu.xml.hu 							\
