@@ -2,7 +2,7 @@ Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
 Version:	4.0.5
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
@@ -66,7 +66,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-vfmg -i -f -x -c -u xfce4 > %{_sysconfdir}/xfce4/menu2.xml 2>/dev/null
+vfmg -i -f -x -c -u -m xfce4 > %{_sysconfdir}/xfce4/menu2.xml 2>/dev/null
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
