@@ -1,13 +1,22 @@
---- xfdesktop-4.0.6/configure.ac.orig	2004-07-09 10:10:54.000000000 +0200
-+++ xfdesktop-4.0.6/configure.ac	2004-07-12 17:13:52.341234304 +0200
-@@ -27,8 +27,8 @@
- AC_CHECK_FUNCS(sigaction srandom)
+--- xfdesktop-4.1.91/configure.ac.orig	2004-10-29 22:40:36.000000000 +0200
++++ xfdesktop-4.1.91/configure.ac	2004-11-13 21:04:34.435955552 +0100
+@@ -34,7 +34,7 @@
  
  dnl Check for i18n support
--BM_I18N([xfdesktop], [ar az bg ca cs de es es_MX et eu fa_IR fi fr hi hu it ja pl
--	 ko lt ms nl no pl pt_BR pt_PT ru sv ta tr uk vi zh_CN zh_TW])
-+BM_I18N([xfdesktop], [ar az bg ca cs de es es_MX et eu fa fi fr hi hu it ja pl
-+	 ko lt ms nl nb pl pt_BR pt ru sv ta tr uk vi zh_CN zh_TW])
+ BM_I18N([xfdesktop], [ar az be bg ca cs de es es_MX et eu fa fi fr gu he hi
+-		      hu it ja pl ko lt ms nl pa pt_BR pt_PT ru sk sv ta tr uk
++		      hu it ja pl ko lt ms nl pa pt_BR pt ru sk sv ta tr uk
+ 		      vi zh_CN zh_TW])
  
  dnl Check for X11 installed
- BM_LIBX11_REQUIRE
+--- xfdesktop-4.1.91/Makefile.am.orig	2004-10-27 21:44:38.000000000 +0200
++++ xfdesktop-4.1.91/Makefile.am	2004-11-13 21:22:31.582204432 +0100
+@@ -40,7 +40,7 @@
+ 	menu.xml.es							\
+ 	menu.xml.et							\
+ 	menu.xml.eu							\
+-	menu.xml.fa_IR 							\
++	menu.xml.fa 							\
+ 	menu.xml.fr 							\
+ 	menu.xml.he							\
+ 	menu.xml.hu 							\
