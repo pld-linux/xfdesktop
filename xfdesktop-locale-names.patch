@@ -9,3 +9,14 @@
  		      vi zh_CN zh_TW])
  
  dnl Check for X11 installed
+--- xfdesktop-4.1.91/Makefile.am.orig	2004-10-27 21:44:38.000000000 +0200
++++ xfdesktop-4.1.91/Makefile.am	2004-11-13 21:22:31.582204432 +0100
+@@ -40,7 +40,7 @@
+ 	menu.xml.es							\
+ 	menu.xml.et							\
+ 	menu.xml.eu							\
+-	menu.xml.fa_IR 							\
++	menu.xml.fa 							\
+ 	menu.xml.fr 							\
+ 	menu.xml.he							\
+ 	menu.xml.hu 							\
