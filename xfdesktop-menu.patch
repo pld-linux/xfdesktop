@@ -1,3 +1,14 @@
+diff -urN xfdesktop-4.0.5.orig/Makefile.am xfdesktop-4.0.5/Makefile.am
+--- xfdesktop-4.0.5.orig/Makefile.am	2004-07-07 18:33:58.390291288 +0200
++++ xfdesktop-4.0.5/Makefile.am	2004-03-21 18:44:55.000000000 +0100
+@@ -13,7 +13,6 @@
+ 	menu.xml.ca 							\
+ 	menu.xml.hu 							\
+ 	menu.xml.it 							\
+-	menu.xml.pl 							\
+ 	menu.xml.ta 							\
+ 	menu.xml.tr 							\
+ 	menu.xml.vi 							\
 diff -urN xfdesktop-4.0.5.orig/menu.xml xfdesktop-4.0.5/menu.xml
 --- xfdesktop-4.0.5.orig/menu.xml	2003-06-04 23:54:32.000000000 +0200
 +++ xfdesktop-4.0.5/menu.xml	2004-02-22 15:59:38.000000000 +0100
