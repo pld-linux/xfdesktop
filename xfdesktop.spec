@@ -2,7 +2,7 @@ Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
 Version:	4.0.5
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
@@ -18,6 +18,7 @@ BuildRequires:	xfce-mcs-manager-devel >= %{version}
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	xfce-mcs-manager >= %{version}
+Requires:	vfmg > 0.9.16-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,6 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+touch $RPM_BUILD_ROOT%{_sysconfdir}/xfce4/menu2.xml
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
 
 %find_lang %{name}
@@ -51,12 +53,16 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+vfmg -i -f -x -c -u xfce4 > %{_sysconfdir}/xfce4/menu2.xml 2>/dev/null
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu2.xml
 %lang(az) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.az
 %lang(ca) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.ca
 %lang(de) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.de
