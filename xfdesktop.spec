@@ -2,7 +2,7 @@ Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
 Version:	4.0.5
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
@@ -37,7 +37,9 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 %patch0 -p1
 %patch1 -p1
 
+mv -f po/{fa_IR,fa}.po
 mv -f po/{no,nb}.po
+mv -f po/{pt_PT,pt}.po
 
 %build
 glib-gettextize --copy --force
