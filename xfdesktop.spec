@@ -70,7 +70,9 @@ vfmg -i -f -x -c -u xfce4 > %{_sysconfdir}/xfce4/menu2.xml 2>/dev/null
 %lang(de) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.de
 %lang(fr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.fr
 %lang(hu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.hu
+%lang(it) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.it
 %lang(nl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.nl
+%lang(pl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.pl
 %lang(ta) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.ta
 %lang(tr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.tr
 %lang(vi) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.vi
