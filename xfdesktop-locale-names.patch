@@ -1,26 +1,13 @@
-diff -ur xfdesktop.orig/configure.ac xfdesktop/configure.ac
---- xfdesktop.orig/configure.ac	2004-08-15 01:06:20.000000000 +0200
-+++ xfdesktop/configure.ac	2004-08-16 23:14:11.804091384 +0200
-@@ -32,8 +32,8 @@
+--- xfdesktop-4.1.90/configure.ac.orig	2004-09-26 12:42:32.000000000 +0200
++++ xfdesktop-4.1.90/configure.ac	2004-10-08 07:04:22.862382424 +0200
+@@ -33,8 +33,8 @@
  AC_CHECK_FUNCS(mmap sigaction srandom)
  
  dnl Check for i18n support
--BM_I18N([xfdesktop], [ar az bg ca cs de es es_MX eu fa_IR fi fr he hi hu
--		      it ja pl ko lt ms nl pt_BR pt_PT ru sv ta tr uk vi
-+BM_I18N([xfdesktop], [ar az bg ca cs de es es_MX eu fa fi fr he hi hu
-+		      it ja pl ko lt ms nl pt_BR pt ru sv ta tr uk vi
+-BM_I18N([xfdesktop], [ar az be bg ca cs de es es_MX et eu fa_IR fi fr gu he hi
+-		      hu it ja pl ko lt ms nl pt_BR pt_PT ru sk sv ta tr uk vi
++BM_I18N([xfdesktop], [ar az be bg ca cs de es es_MX et eu fa fi fr gu he hi
++		      hu it ja pl ko lt ms nl pt_BR pt ru sk sv ta tr uk vi
  		      zh_CN zh_TW])
  
  dnl Check for X11 installed
-diff -ur xfdesktop.orig/Makefile.am xfdesktop/Makefile.am
---- xfdesktop.orig/Makefile.am	2004-08-13 16:50:40.000000000 +0200
-+++ xfdesktop/Makefile.am	2004-08-16 23:14:19.724887240 +0200
-@@ -39,7 +39,7 @@
- 	menu.xml.de 							\
- 	menu.xml.es								\
- 	menu.xml.eu								\
--	menu.xml.fa_IR 							\
-+	menu.xml.fa 							\
- 	menu.xml.fr 							\
- 	menu.xml.hu 							\
- 	menu.xml.ms  							\
