@@ -26,12 +26,12 @@ BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= 4.1.0
 BuildRequires:	xfce4-panel-devel >= %{version}
-%{?with_vfmg:Requires(post):	vfmg >= 0.9.18-7}
+%{?with_vfmg:Requires(post):	vfmg >= 0.9.18-8}
 Requires:	gtk+2 >= 1:2.2.0
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	libxml2 >= 2.4.0
-%{?with_vfmg:Requires:	vfmg >= 0.9.18-7}
+%{?with_vfmg:Requires:	vfmg >= 0.9.18-8}
 Requires:	xfce-mcs-manager >= 4.1.0
 Requires:	xfce4-panel >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
