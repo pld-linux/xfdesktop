@@ -1,12 +1,12 @@
 Summary:	Desktop manager for the XFce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska XFce
 Name:		xfdesktop
-Version:	4.0.2
+Version:	4.0.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	5b5aa47435d39a0bc5328c5a0e3035ff
+# Source0-md5:	21eace73c6daecdc948f789d759e4a38
 URL:		http://www.xfce.org/
 BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= %{version}
