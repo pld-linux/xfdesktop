@@ -12,6 +12,7 @@ Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
+Patch0:		%{name}-locale-names.patch
 # Source0-md5:	671f2f41e77c6087610ebe5dcf55af53
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
@@ -41,6 +42,11 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska XFce.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
+
+mv -f po/{fa_IR,fa}.po
+mv -f po/{pt_PT,pt}.po
+mv -f menu.xml.fa_IR menu.xml.fa
 
 %build
 glib-gettextize --copy --force
@@ -84,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.de
 %lang(es) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.es
 %lang(eu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.eu
-%lang(fa_IR) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.fa_IR
+%lang(fa) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.fa
 %lang(fr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.fr
 %lang(hu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.hu
 %lang(ms) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/menu.xml.ms
