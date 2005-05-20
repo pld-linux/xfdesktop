@@ -92,41 +92,41 @@ rm -rf $RPM_BUILD_ROOT
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*.png
-%{_datadir}/xfce4/doc/fr/*.html
-%{_datadir}/xfce4/doc/fr/images/*.png
+%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
 %{_mandir}/man1/*.1*
 
 %dir %{_sysconfdir}/xdg/xfce4/desktop
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml
-%{?with_vfmg:%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu2.xml}
-#%lang(az) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.az
-#%lang(ca) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ca
-%lang(cs) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.cs
-%lang(da) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.da
-%lang(de) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.de
-%lang(es) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.es
-%lang(et) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.et
-#%lang(eu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.eu
-#%lang(fa) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fa
-%lang(fi) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fi
-%lang(fr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fr
-%lang(he) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.he
-#%lang(hu) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.hu
-%lang(ja) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ja
-%lang(ko) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ko
-#%lang(ms) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ms
-%lang(nl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nl
-%lang(pl) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pl
-%lang(pt_BR) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pt_BR
-%lang(ro) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ro
-%lang(ru) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ru
-%lang(sk) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.sk
-#%lang(ta) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ta
-#%lang(tr) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.tr
-%lang(uk) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.uk
-%lang(vi) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.vi
-#%lang(zh_CN) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_CN
-%lang(zh_TW) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_TW
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml
+%{?with_vfmg:%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu2.xml}
+#%lang(az) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.az
+#%lang(ca) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ca
+%lang(cs) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.cs
+%lang(da) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.da
+%lang(de) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.de
+%lang(es) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.es
+%lang(et) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.et
+#%lang(eu) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.eu
+#%lang(fa) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fa
+%lang(fi) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fi
+%lang(fr) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fr
+%lang(he) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.he
+#%lang(hu) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.hu
+%lang(ja) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ja
+%lang(ko) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ko
+#%lang(ms) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ms
+%lang(nl) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nl
+%lang(pl) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pl
+%lang(pt_BR) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pt_BR
+%lang(ro) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ro
+%lang(ru) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ru
+%lang(sk) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.sk
+#%lang(ta) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ta
+#%lang(tr) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.tr
+%lang(uk) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.uk
+%lang(vi) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.vi
+#%lang(zh_CN) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_CN
+%lang(zh_TW) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_TW
 
 %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml
 %lang(cs) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.cs
