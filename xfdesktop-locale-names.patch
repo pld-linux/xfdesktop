@@ -1,14 +1,11 @@
-diff -urN xfdesktop-4.2.2/configure.ac fix/xfdesktop-4.2.2/configure.ac
---- xfdesktop-4.2.2/configure.ac	2005-05-15 10:27:45.000000000 +0200
-+++ fix/xfdesktop-4.2.2/configure.ac	2005-05-20 16:22:23.000000000 +0200
-@@ -34,8 +34,8 @@
- 
+--- xfdesktop-4.2.3/configure.ac.orig	2005-11-05 18:11:55.000000000 +0100
++++ xfdesktop-4.2.3/configure.ac	2005-11-10 07:10:13.000000000 +0100
+@@ -35,7 +35,7 @@
  dnl Check for i18n support
- BM_I18N([xfdesktop], [ar az be bg bn_IN ca cs da de el en_GB es es_MX et eu fa
--                      fi fr gu he hi hu it ja pl ko lt mr ms nb_NO nl pa pt_BR
--		      pt_PT ro ru sk sv ta tr uk vi zh_CN zh_TW])
-+                      fi fr gu he hi hu it ja pl ko lt mr ms nb nl pa pt_BR
-+		      pt ro ru sk sv ta tr uk vi zh_CN zh_TW])
+ BM_I18N([xfdesktop], [af ar az be bg bn_IN ca cs da de el en_GB
+ 		      eo es es_MX et eu fa fi fr gu he hi hu hy it
+-		      ja ko ku lt mr ms nb_NO nl pa pl pt_BR pt_PT
++		      ja ko ku lt mr ms nb nl pa pl pt_BR pt
+ 		      ro ru sk sl sv ta tr uk vi zh_CN zh_TW])
  
  dnl Check for X11 installed
- BM_LIBX11_REQUIRE
