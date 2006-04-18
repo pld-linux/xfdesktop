@@ -27,7 +27,10 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-dev-tools
 BuildRequires:	xfce4-panel-devel >= %{version}
-%{?with_vfmg:Requires:	vfmg >= 0.9.18-8}
+%if %{with vfmg}
+Requires(post):	vfmg >= 0.9.95
+Requires:	vfmg >= 0.9.18-8
+%endif
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -77,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 # generate initial menu
 [ -f /etc/sysconfig/vfmg ] && . /etc/sysconfig/vfmg
 [ "$XFCE4" = yes -o "$XFCE4" = 1 -o ! %{_sysconfdir}/xdg/xfce4/desktop/menu2.xml ] && \
-	vfmg -f -x -c -u -m xfce4 > %{_sysconfdir}/xdg/xfce4/desktop/menu2.xml 2>/dev/null ||:
+	vfmg xfce4 > %{_sysconfdir}/xdg/xfce4/desktop/menu2.xml 2>/dev/null ||:
 %endif
 
 %files -f %{name}.lang
