@@ -5,19 +5,19 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
 Name:		xfdesktop
-Version:	4.2.3
+Version:	4.3.90.1
 Release:	1%{!?with_vfmg:novfmg}
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	0be57a574a654625d61281411fb6be55
+Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	2d01a1e8542710605e681d5a8db31bcf
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-vfmg.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 1:2.2.0
+BuildRequires:	gtk+2-devel >= 1:2.6.0
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
@@ -89,11 +89,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %attr(755,root,root) %{_libdir}/xfce4/modules/*.so
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/*.so
+%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-menu-plugin
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*
-%lang(he) %{_datadir}/xfce4/doc/he/*
+%lang(it) %{_datadir}/xfce4/doc/it/*
 %{_mandir}/man1/*.1*
 
 %dir %{_sysconfdir}/xdg/xfce4/desktop
@@ -125,8 +125,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml
 %lang(cs) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.cs
+%lang(el) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.el
+%lang(es) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.es
 %lang(eu) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.eu
 %lang(fi) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.fi
+%lang(fr) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.fr
 %lang(he) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.he
 %lang(hu) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.hu
 %lang(ja) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ja
@@ -141,5 +144,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(zh_TW) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_TW
 %{_desktopdir}/*.desktop
 %{_datadir}/xfce4/backdrops
+%{_datadir}/xfce4/panel-plugins/*
 %{_pixmapsdir}/*
 %{_iconsdir}/hicolor/*/apps/*
