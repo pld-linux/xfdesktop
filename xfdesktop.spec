@@ -26,6 +26,7 @@ BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
+Requires:	xdg-menus
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
