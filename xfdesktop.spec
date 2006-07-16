@@ -1,29 +1,30 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
 Name:		xfdesktop
-Version:	4.3.90.1
+Version:	4.3.90.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	2d01a1e8542710605e681d5a8db31bcf
+# Source0-md5:	69904948c56287df099b556352a755c2
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
-BuildRequires:	Thunar-devel >= 0.3.0
+BuildRequires:	Thunar-devel >= 0.3.2
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.6.0
+BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	intltool
-BuildRequires:	libexo-devel >= 0.3.1.6
+BuildRequires:	libexo-devel >= 0.3.1.8
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
-BuildRequires:	libxml2-devel >= 2.4.0
+BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	xfce4-dev-tools
+BuildRequires:	xfce4-dev-tools >= %{version}
 BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
+Requires(post,postun):	gtk+2 >= 2:2.10.0
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	xdg-menus
@@ -46,10 +47,11 @@ mv -f po/{nb_NO,nb}.po
 %{__glib_gettextize}
 %{__intltoolize}
 %{__libtoolize}
-%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
+%{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure
 
 %{__make}
@@ -67,6 +69,12 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/{mcs-plugins,panel-plugins,modules}/*.{la,
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+
+%postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO
@@ -74,6 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %attr(755,root,root) %{_libdir}/xfce4/modules/*.so
 %attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-menu-plugin
+%dir %{_datadir}/xfce4-menueditor/xfce4-menueditor.ui
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*
@@ -90,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(el) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.el
 %lang(es) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.es
 %lang(et) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.et
+%lang(eu) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.eu
 %lang(fi) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fi
 %lang(fr) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fr
 %lang(he) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.he
