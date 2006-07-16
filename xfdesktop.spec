@@ -82,7 +82,8 @@ gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %attr(755,root,root) %{_libdir}/xfce4/modules/*.so
 %attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-menu-plugin
-%dir %{_datadir}/xfce4-menueditor/xfce4-menueditor.ui
+%dir %{_datadir}/xfce4-menueditor
+%{_datadir}/xfce4-menueditor/xfce4-menueditor.ui
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*
