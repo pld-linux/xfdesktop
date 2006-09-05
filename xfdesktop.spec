@@ -6,7 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	310b5e121ee69b3294f00358ea7ff4ed
+# Source0-md5:	ad4dc2ceeafe10ff69196e287f07090a
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	Thunar-devel >= 0.4.0
