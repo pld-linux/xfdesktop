@@ -1,21 +1,21 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
 Name:		xfdesktop
-Version:	4.3.99.1
+Version:	4.3.99.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	ad4dc2ceeafe10ff69196e287f07090a
+# Source0-md5:	d44a81b9da9598425d9dd8dcd1cd5485
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
-BuildRequires:	Thunar-devel >= 0.4.0
+BuildRequires:	Thunar-devel >= 0.5.0
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libexo-devel >= 0.3.1.10
+BuildRequires:	libexo-devel >= 0.3.1.12
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
@@ -25,7 +25,7 @@ BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce4-dev-tools >= %{version}
 BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	hicolor-icon-theme
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
@@ -53,7 +53,14 @@ mv -f po/{nb_NO,nb}.po
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure
+%configure \
+	--enable-desktop-icons \
+	--enable-desktop-menu \
+	--enable-exo \
+	--enable-file-icons \
+	--enable-panel-plugin \
+	--enable-menueditor \
+	--enable-thunarx
 
 %{__make}
 
@@ -120,6 +127,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(zh_TW) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_TW
 
 %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml
+%lang(ca) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ca
 %lang(cs) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.cs
 %lang(de) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.de
 %lang(el) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.el
