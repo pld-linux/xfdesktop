@@ -1,34 +1,32 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
 Name:		xfdesktop
-Version:	4.3.99.2
+Version:	4.4.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	d44a81b9da9598425d9dd8dcd1cd5485
+# Source0-md5:	a1c93d228924b5daf151f698114021d3
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
-BuildRequires:	Thunar-devel >= 0.5.0
+BuildRequires:	Thunar-devel >= 0.8.0
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libexo-devel >= 0.3.1.12
+BuildRequires:	libexo-devel >= 0.3.2
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
-BuildRequires:	libxml2-devel >= 1:2.6.26
+BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-dev-tools >= %{version}
 BuildRequires:	xfce4-panel-devel >= %{version}
-BuildRequires:	xfce-mcs-manager-devel >= %{version}
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
-Requires:	libxfce4mcs >= %{version}
-Requires:	libxfcegui4 >= %{version}
 Requires:	xdg-menus
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -95,7 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*
-%lang(it) %{_datadir}/xfce4/doc/it/*
 %{_mandir}/man1/*.1*
 
 %dir %{_sysconfdir}/xdg/xfce4/desktop
