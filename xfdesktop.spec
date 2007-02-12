@@ -1,5 +1,5 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
-Summary(pl.UTF-8):   Zarządca pulpitu dla środowiska Xfce
+Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
 Version:	4.4.0
 Release:	1
