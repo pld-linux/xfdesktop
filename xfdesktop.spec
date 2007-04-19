@@ -1,13 +1,14 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
 Name:		xfdesktop
-Version:	4.4.0
+Version:	4.4.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	a1c93d228924b5daf151f698114021d3
+# Source0-md5:	7cbebc8e895eb19ee735e520ea48d03b
 Patch0:		%{name}-locale-names.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://www.xfce.org/
 BuildRequires:	Thunar-devel >= 0.8.0
 BuildRequires:	autoconf >= 2.50
@@ -23,7 +24,7 @@ BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
-BuildRequires:	xfce4-dev-tools >= %{version}
+BuildRequires:	xfce4-dev-tools >= 4.4.0
 BuildRequires:	xfce4-panel-devel >= %{version}
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
@@ -39,6 +40,7 @@ xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska Xfce.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 mv -f po/{pt_PT,pt}.po
 mv -f po/{nb_NO,nb}.po
@@ -97,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_sysconfdir}/xdg/xfce4/desktop
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml
+%lang(be) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.be
 %lang(ca) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ca
 %lang(cs) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.cs
 %lang(da) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.da
@@ -109,15 +112,18 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.fr
 %lang(he) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.he
 %lang(hu) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.hu
+%lang(it) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.it
 %lang(ja) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ja
 %lang(ko) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ko
 %lang(nl) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nl
+%lang(pa) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pa
 %lang(pl) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pl
 %lang(pt_BR) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pt_BR
 %lang(ro) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ro
 %lang(ru) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ru
 %lang(sk) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.sk
 %lang(sv) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.sv
+%lang(tr) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.tr
 %lang(uk) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.uk
 %lang(vi) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.vi
 %lang(zh_TW) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.zh_TW
@@ -133,6 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.fr
 %lang(he) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.he
 %lang(hu) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.hu
+%lang(it) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.it
 %lang(ja) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ja
 %lang(nl) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.nl
 %lang(pl) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.pl
@@ -141,6 +148,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ru) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ru
 %lang(sk) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.sk
 %lang(sv) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.sv
+%lang(tr) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.tr
 %lang(zh_CN) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_CN
 %lang(zh_TW) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_TW
 %{_desktopdir}/*.desktop
