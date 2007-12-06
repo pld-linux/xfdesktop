@@ -1,22 +1,22 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.4.1
-Release:	3
+Version:	4.4.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	7cbebc8e895eb19ee735e520ea48d03b
+# Source0-md5:	694601234e74903d0fccba064f411e0c
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://www.xfce.org/
-BuildRequires:	Thunar-devel >= 0.8.0
+BuildRequires:	Thunar-devel >= 0.9.0
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libexo-devel >= 0.3.2
+BuildRequires:	libexo-devel >= 0.3.4
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
@@ -24,7 +24,7 @@ BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
-BuildRequires:	xfce4-dev-tools >= 4.4.0
+BuildRequires:	xfce4-dev-tools >= 4.4.0.1
 BuildRequires:	xfce4-panel-devel >= %{version}
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
@@ -69,6 +69,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+mv -f $RPM_BUILD_ROOT%{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nb{_NO,}
+mv -f $RPM_BUILD_ROOT%{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.nb{_NO,}
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/{mcs-plugins,panel-plugins,modules}/*.{la,a}
 
@@ -116,6 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(it) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.it
 %lang(ja) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ja
 %lang(ko) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.ko
+%lang(nb) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nb
 %lang(nl) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.nl
 %lang(pa) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pa
 %lang(pl) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/desktop/menu.xml.pl
@@ -142,6 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(hu) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.hu
 %lang(it) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.it
 %lang(ja) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.ja
+%lang(nb) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.nb
 %lang(nl) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.nl
 %lang(pl) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.pl
 %lang(pt_BR) %{_sysconfdir}/xdg/xfce4/desktop/xfce-registered-categories.xml.pt_BR
