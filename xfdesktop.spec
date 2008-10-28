@@ -9,6 +9,7 @@ Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.
 # Source0-md5:	3c1ea8d2ccb3cfbbbbba834214ad5d2e
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-desktop.patch
+Patch2:		%{name}-ac_fix.patch
 URL:		http://www.xfce.org/
 BuildRequires:	Thunar-devel >= 0.9.3
 BuildRequires:	autoconf >= 2.50
@@ -41,18 +42,18 @@ xfdesktop zawiera zarządcę pulpitu dla środowiska Xfce.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 mv -f po/{pt_PT,pt}.po
 mv -f po/{nb_NO,nb}.po
 
 %build
 %{__glib_gettextize}
-%{__intltoolize}
-%{__libtoolize}
 %{__aclocal}
+%{__intltoolize}
 %{__autoheader}
 %{__automake}
-%{__autoconf}
+%{__aclocal}
 %configure \
 	--enable-desktop-icons \
 	--enable-desktop-menu \
