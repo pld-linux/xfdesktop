@@ -1,12 +1,12 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.6.0
+Version:	4.6.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	508b18f9d4ef27833517bba3bd6e2fbf
+# Source0-md5:	ae15cacc3e3834cca7238a8e1035c50d
 URL:		http://www.xfce.org/projects/xfdesktop/
 BuildRequires:	Thunar-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.50
@@ -62,9 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT%{_datadir}/locale/nb{_NO,}
-mv $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
-
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/{panel-plugins,modules}/*.{la,a}
 
 %find_lang %{name}
@@ -92,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/doc/C/*
 %lang(da) %{_datadir}/xfce4/doc/da/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*
+%lang(it) %{_datadir}/xfce4/doc/it/*
 %lang(ja) %{_datadir}/xfce4/doc/ja/*
 %{_mandir}/man1/*.1*
 
