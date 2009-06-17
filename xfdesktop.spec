@@ -2,7 +2,7 @@ Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
 Version:	4.6.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
