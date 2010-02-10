@@ -1,8 +1,8 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
-Summary(pl):	Zarz±dca pulpitu dla ¶rodowiska Xfce
+Summary(pl.UTF-8):	ZarzÄ…dca pulpitu dla Å›rodowiska Xfce
 Name:		xfdesktop
 Version:	4.4.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
@@ -34,8 +34,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 xfdesktop contain a desktop manager for the Xfce Desktop Environment.
 
-%description -l pl
-xfdesktop zawiera zarz±dcê pulpitu dla ¶rodowiska Xfce.
+%description -l pl.UTF-8
+xfdesktop zawiera zarzÄ…dcÄ™ pulpitu dla Å›rodowiska Xfce.
 
 %prep
 %setup -q
