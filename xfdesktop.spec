@@ -2,7 +2,7 @@ Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
 Version:	4.6.1
-Release:	5
+Release:	6
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
@@ -28,6 +28,7 @@ BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	xfconf-devel >= %{version}
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
+Requires:	xfce4-dirs >= 4.6
 Requires:	xfce4-panel >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -87,12 +88,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/xfce4/modules/xfce4_desktop_menu.so
 %attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-menu-plugin
 
-%docdir %{_datadir}/xfce4/doc
-%{_datadir}/xfce4/doc/C/*
-%lang(da) %{_datadir}/xfce4/doc/da/*
-%lang(fr) %{_datadir}/xfce4/doc/fr/*
-%lang(it) %{_datadir}/xfce4/doc/it/*
-%lang(ja) %{_datadir}/xfce4/doc/ja/*
+%{_datadir}/xfce4/doc/C/*.html
+%{_datadir}/xfce4/doc/C/images/*.png
+%lang(da) %{_datadir}/xfce4/doc/da/*.html
+%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
+%lang(it) %{_datadir}/xfce4/doc/it/*.html
+%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
+%lang(ja) %{_datadir}/xfce4/doc/ja/*.html
+%lang(ja) %{_datadir}/xfce4/doc/ja/images/*.png
 %{_mandir}/man1/*.1*
 
 %{_sysconfdir}/xdg/menus
