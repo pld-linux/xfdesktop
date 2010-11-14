@@ -67,6 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/{panel-plugins,modules}/*.{la,a}
 
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+
 %find_lang %{name}
 
 %clean
