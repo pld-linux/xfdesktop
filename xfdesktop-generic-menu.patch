@@ -1,5 +1,5 @@
---- xfdesktop-4.6.1/common/desktop-menu-utils.c~	2009-01-12 23:03:12.000000000 +0100
-+++ xfdesktop-4.6.1/common/desktop-menu-utils.c	2010-05-16 20:19:02.820729427 +0200
+--- xfdesktop-4.6.1/src/xfce-desktop-menu.c~	2009-01-12 23:03:12.000000000 +0100
++++ xfdesktop-4.6.1/src/xfce-desktop-menu.c	2010-05-16 20:19:02.820729427 +0200
 @@ -56,6 +56,22 @@
      }
      
