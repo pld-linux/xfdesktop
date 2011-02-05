@@ -1,40 +1,36 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.7.2
+Version:	4.8.0
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce/4.8pre1/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	88d10a7775f65a007639f921c5c8f13a
-Patch0:		%{name}-generic-menu.patch
-URL:		http://www.xfce.org/projects/xfdesktop/
-BuildRequires:	Thunar-devel >= 1.0.0
+Source0:	http://archive.xfce.org/xfce/4.8/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	828223bc0a2b311b2f6aa529b1b7a87d
+URL:		http://www.xfce.org/projects/xfdesktop
+BuildRequires:	Thunar-devel >= 1.2.0
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	exo-devel >= 0.5.4
+BuildRequires:	dbus-glib-devel
+BuildRequires:	exo-devel >= 0.6.0
 BuildRequires:	garcon-devel >= 0.1.3
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	glib2-devel >= 1:2.18.0
+BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libglade2-devel
+BuildRequires:	libnotify-devel >= 0.4.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.12.0
-#BuildRequires:	libxfce4ui-devel >= %{version}
-BuildRequires:	libxfce4ui-devel >= 4.7.0
+BuildRequires:	libwnck-devel >= 2.22.0
+BuildRequires:	libxfce4ui-devel >= %{version}
+BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	xfce4-dev-tools >= 4.6.0
-#BuildRequires:	xfce4-panel-devel >= %{version}
-#BuildRequires:	xfconf-devel >= %{version}
-BuildRequires:	xfce4-panel-devel >= 4.7.0
-BuildRequires:	xfconf-devel >= 4.7.0
-Requires(post,postun):	gtk+2
-Requires(post,postun):	hicolor-icon-theme
+BuildRequires:	xfce4-dev-tools >= 4.8.0
+BuildRequires:	xfconf-devel >= %{version}
+Requires(post,postun):	gtk-update-icon-cache
 Requires:	garcon >= 0.1.2
+Requires:	hicolor-icon-theme
 Requires:	xfce4-dirs >= 4.6
-#Requires:	xfce4-panel >= %{version}
-Requires:	xfce4-panel >= 4.7.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,10 +41,10 @@ xfdesktop zawiera zarządcę pulpitu dla środowiska Xfce.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure \
+	--disable-silent-rules \
 	--enable-desktop-icons \
 	--enable-desktop-menu \
 	--enable-exo \
@@ -62,6 +58,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
 %find_lang %{name}
 
@@ -80,17 +78,23 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xfdesktop
 %attr(755,root,root) %{_bindir}/xfdesktop-settings
 
-%if 0
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*.png
-%lang(da) %{_datadir}/xfce4/doc/da/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
-%lang(it) %{_datadir}/xfce4/doc/it/*.html
-%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
-%lang(ja) %{_datadir}/xfce4/doc/ja/*.html
-%lang(ja) %{_datadir}/xfce4/doc/ja/images/*.png
-%endif
+%dir %{_docdir}/xfdesktop
+%dir %{_docdir}/xfdesktop/html
+%{_docdir}/xfdesktop/html/C
+%{_docdir}/xfdesktop/html/*.css
+%lang(bn) %{_docdir}/xfdesktop/html/bn
+%lang(ca) %{_docdir}/xfdesktop/html/ca
+%lang(da) %{_docdir}/xfdesktop/html/da
+%lang(el) %{_docdir}/xfdesktop/html/el
+%lang(fr) %{_docdir}/xfdesktop/html/fr
+%lang(gl) %{_docdir}/xfdesktop/html/gl
+%lang(id) %{_docdir}/xfdesktop/html/id
+%lang(it) %{_docdir}/xfdesktop/html/it
+%lang(ja) %{_docdir}/xfdesktop/html/ja
+%lang(ru) %{_docdir}/xfdesktop/html/ru
+%lang(sv) %{_docdir}/xfdesktop/html/sv
+%lang(ug) %{_docdir}/xfdesktop/html/ug
+%lang(zh_CN) %{_docdir}/xfdesktop/html/zh_CN
 %{_mandir}/man1/*.1*
 
 %{_desktopdir}/*.desktop
