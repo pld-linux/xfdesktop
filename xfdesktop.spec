@@ -1,35 +1,36 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.6.2
-Release:	2
+Version:	4.8.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	e800ea9fee7a5c5eaf2ae96e23a83e3a
-Patch0:		%{name}-generic-menu.patch
-URL:		http://www.xfce.org/projects/xfdesktop/
-BuildRequires:	Thunar-devel >= 1.0.0
+Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	a3a255cc7756ddc2a0a6fdee9fb8b2c9
+URL:		http://www.xfce.org/projects/xfdesktop
+BuildRequires:	Thunar-devel >= 1.2.0
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	exo-devel >= 0.3.100
+BuildRequires:	dbus-glib-devel
+BuildRequires:	exo-devel >= 0.6.0
+BuildRequires:	garcon-devel >= 0.1.3
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	glib2-devel >= 1:2.18.0
+BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libglade2-devel
+BuildRequires:	libnotify-devel >= 0.4.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.12.0
-BuildRequires:	libxfce4menu-devel >= %{version}
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libwnck-devel >= 2.22.0
+BuildRequires:	libxfce4ui-devel >= 4.8.0
+BuildRequires:	libxfce4util-devel >= 4.8.0
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	xfce4-dev-tools >= 4.6.0
-BuildRequires:	xfce4-panel-devel >= %{version}
-BuildRequires:	xfconf-devel >= %{version}
-Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	hicolor-icon-theme
+BuildRequires:	rpmbuild(macros) >= 1.601
+BuildRequires:	xfce4-dev-tools >= 4.8.0
+BuildRequires:	xfconf-devel >= 4.8.0
+Requires:	garcon >= 0.1.2
+Requires:	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
 Requires:	xfce4-dirs >= 4.6
-Requires:	xfce4-panel >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,21 +41,14 @@ xfdesktop zawiera zarządcę pulpitu dla środowiska Xfce.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__glib_gettextize}
-%{__aclocal}
-%{__intltoolize}
-%{__autoheader}
-%{__automake}
-%{__aclocal}
 %configure \
+	--disable-silent-rules \
 	--enable-desktop-icons \
 	--enable-desktop-menu \
 	--enable-exo \
 	--enable-file-icons \
-	--enable-panel-plugin \
 	--enable-thunarx
 
 %{__make}
@@ -65,9 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/{panel-plugins,modules}/*.{la,a}
-
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
 %find_lang %{name}
 
@@ -83,28 +75,26 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO
-%attr(755,root,root) %{_bindir}/xfce4-popup-menu
 %attr(755,root,root) %{_bindir}/xfdesktop
 %attr(755,root,root) %{_bindir}/xfdesktop-settings
-%dir %{_libdir}/xfce4/modules
-%attr(755,root,root) %{_libdir}/xfce4/modules/xfce4_desktop_menu.so
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-menu-plugin
 
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*.png
-%lang(da) %{_datadir}/xfce4/doc/da/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
-%lang(it) %{_datadir}/xfce4/doc/it/*.html
-%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
-%lang(ja) %{_datadir}/xfce4/doc/ja/*.html
-%lang(ja) %{_datadir}/xfce4/doc/ja/images/*.png
+%dir %{_docdir}/xfdesktop
+%dir %{_docdir}/xfdesktop/html
+%{_docdir}/xfdesktop/html/C
+%{_docdir}/xfdesktop/html/*.css
+%lang(bn) %{_docdir}/xfdesktop/html/bn
+%lang(ca) %{_docdir}/xfdesktop/html/ca
+%lang(da) %{_docdir}/xfdesktop/html/da
+%lang(fr) %{_docdir}/xfdesktop/html/fr
+%lang(gl) %{_docdir}/xfdesktop/html/gl
+%lang(it) %{_docdir}/xfdesktop/html/it
+%lang(ja) %{_docdir}/xfdesktop/html/ja
+%lang(ru) %{_docdir}/xfdesktop/html/ru
+%lang(ug) %{_docdir}/xfdesktop/html/ug
+%lang(zh_CN) %{_docdir}/xfdesktop/html/zh_CN
 %{_mandir}/man1/*.1*
 
-%{_sysconfdir}/xdg/menus
 %{_desktopdir}/*.desktop
-%{_datadir}/desktop-directories/*
 %{_datadir}/xfce4/backdrops
-%{_datadir}/xfce4/panel-plugins/*
 %{_pixmapsdir}/*
 %{_iconsdir}/hicolor/*/apps/*
