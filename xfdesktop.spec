@@ -77,28 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/xfdesktop
 %attr(755,root,root) %{_bindir}/xfdesktop-settings
-
-%dir %{_docdir}/xfdesktop
-%dir %{_docdir}/xfdesktop/html
-%{_docdir}/xfdesktop/html/C
-%{_docdir}/xfdesktop/html/*.css
-%lang(bn) %{_docdir}/xfdesktop/html/bn
-%lang(ca) %{_docdir}/xfdesktop/html/ca
-%lang(da) %{_docdir}/xfdesktop/html/da
-%lang(el) %{_docdir}/xfdesktop/html/el
-%lang(fr) %{_docdir}/xfdesktop/html/fr
-%lang(gl) %{_docdir}/xfdesktop/html/gl
-%lang(id) %{_docdir}/xfdesktop/html/id
-%lang(it) %{_docdir}/xfdesktop/html/it
-%lang(ja) %{_docdir}/xfdesktop/html/ja
-%lang(ru) %{_docdir}/xfdesktop/html/ru
-%lang(sv) %{_docdir}/xfdesktop/html/sv
-%lang(tr) %{_docdir}/xfdesktop/html/tr
-%lang(ug) %{_docdir}/xfdesktop/html/ug
-%lang(zh_CN) %{_docdir}/xfdesktop/html/zh_CN
 %{_mandir}/man1/*.1*
-
 %{_desktopdir}/*.desktop
-%{_datadir}/xfce4/backdrops
 %{_pixmapsdir}/*
 %{_iconsdir}/hicolor/*/apps/*
