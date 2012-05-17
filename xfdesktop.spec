@@ -1,18 +1,18 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.8.3
+Version:	4.10.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	617c667c469698e8c974e38412cb484c
+Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.10/%{name}-%{version}.tar.bz2
+# Source0-md5:	d5f6fb9fdde3ddff5804b2a251892936
 URL:		http://www.xfce.org/projects/xfdesktop
-BuildRequires:	Thunar-devel >= 1.2.0
+BuildRequires:	Thunar-devel >= 1.4.0
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel
-BuildRequires:	exo-devel >= 0.6.0
+BuildRequires:	exo-devel >= 0.8.0
 BuildRequires:	garcon-devel >= 0.1.3
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.18.0
@@ -21,13 +21,13 @@ BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libnotify-devel >= 0.4.0
 BuildRequires:	libtool
 BuildRequires:	libwnck2-devel >= 2.22.0
-BuildRequires:	libxfce4ui-devel >= 4.8.0
-BuildRequires:	libxfce4util-devel >= 4.8.0
+BuildRequires:	libxfce4ui-devel >= 4.10.0
+BuildRequires:	libxfce4util-devel >= 4.10.0
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.601
-BuildRequires:	xfce4-dev-tools >= 4.8.0
-BuildRequires:	xfconf-devel >= 4.8.0
-Requires:	garcon >= 0.1.2
+BuildRequires:	xfce4-dev-tools >= 4.10.0
+BuildRequires:	xfconf-devel >= 4.10.0
+Requires:	garcon >= 0.2.0
 Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
 Requires:	xfce4-dirs >= 4.6
