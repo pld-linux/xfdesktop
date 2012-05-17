@@ -81,3 +81,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 %{_iconsdir}/hicolor/*/apps/*
+%{_datadir}/backgrounds/xfce/xfce-blue.jpg
