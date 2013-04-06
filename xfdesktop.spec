@@ -1,12 +1,12 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.10.0
-Release:	2
+Version:	4.10.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	d5f6fb9fdde3ddff5804b2a251892936
+# Source0-md5:	54a84ce63046c279fc3ec3f436d2f1b0
 URL:		http://www.xfce.org/projects/xfdesktop
 BuildRequires:	Thunar-devel >= 1.4.0
 BuildRequires:	autoconf >= 2.50
