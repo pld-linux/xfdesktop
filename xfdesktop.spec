@@ -14,7 +14,7 @@ BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.84
 BuildRequires:	exo-devel >= 0.8.0
 BuildRequires:	garcon-devel >= 0.3.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.30.0
 BuildRequires:	gtk+2-devel >= 2:2.24.0
 BuildRequires:	intltool >= 0.35.0
