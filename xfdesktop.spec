@@ -1,19 +1,19 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.11.8
-Release:	2
+Version:	4.12.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.11/%{name}-%{version}.tar.bz2
-# Source0-md5:	dd716b6e594aa876ec2674c994c74a57
+Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.12/%{name}-%{version}.tar.bz2
+# Source0-md5:	60173a11e358909e70b7a245f8fb1417
 URL:		http://www.xfce.org/projects/xfdesktop
-BuildRequires:	Thunar-devel >= 1.6.0
+BuildRequires:	Thunar-devel >= 1.6.6
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.84
 BuildRequires:	exo-devel >= 0.8.0
-BuildRequires:	garcon-devel >= 0.3.0
+BuildRequires:	garcon-devel >= 0.4.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.30.0
 BuildRequires:	gtk+2-devel >= 2:2.24.0
@@ -21,27 +21,27 @@ BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libnotify-devel >= 0.4.0
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libwnck2-devel >= 2.30.0
-BuildRequires:	libxfce4ui-devel >= 4.11.1
-BuildRequires:	libxfce4util-devel >= 4.11.0
+BuildRequires:	libxfce4ui-devel >= 4.12.0
+BuildRequires:	libxfce4util-devel >= 4.12.0
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.601
-BuildRequires:	xfce4-dev-tools >= 4.11.0
-BuildRequires:	xfconf-devel >= 4.10.0
+BuildRequires:	xfce4-dev-tools >= 4.12.0
+BuildRequires:	xfconf-devel >= 4.12.0
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
-Requires:	Thunar-libs >= 1.6.0
+Requires:	Thunar-libs >= 1.6.6
 Requires:	dbus-glib >= 0.84
 Requires:	exo >= 0.8.0
-Requires:	garcon >= 0.3.0
+Requires:	garcon >= 0.4.0
 Requires:	glib2 >= 1:2.30.0
 Requires:	gtk+2 >= 2:2.24.0
 Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
 Requires:	libwnck2 >= 2.30.0
-Requires:	libxfce4ui >= 4.11.1
-Requires:	libxfce4util >= 4.11.0
+Requires:	libxfce4ui >= 4.12.0
+Requires:	libxfce4util >= 4.12.0
 Requires:	xfce4-dirs >= 4.6
-Requires:	xfconf >= 4.10.0
+Requires:	xfconf >= 4.12.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -99,3 +99,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/apps/xfce4-menueditor.*
 %dir %{_datadir}/backgrounds/xfce
 %{_datadir}/backgrounds/xfce/xfce-blue.jpg
+%{_datadir}/backgrounds/xfce/xfce-teal.jpg
