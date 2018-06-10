@@ -8,7 +8,8 @@ Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.13/%{name}-%{version}.tar.bz2
 # Source0-md5:	9e7d04e79053cf9ec077f55425f234c6
 URL:		http://www.xfce.org/projects/xfdesktop
-BuildRequires:	Thunar-devel >= 1.6.6
+Patch0:		thunarx-3.patch
+BuildRequires:	Thunar-devel >= 1.8.0
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.84
@@ -29,7 +30,7 @@ BuildRequires:	xfce4-dev-tools >= 4.12.0
 BuildRequires:	xfconf-devel >= 4.12.1
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
-Requires:	Thunar-libs >= 1.6.6
+Requires:	Thunar-libs >= 1.8.0
 Requires:	dbus-glib >= 0.84
 Requires:	exo >= 0.12.0
 Requires:	garcon >= 0.6.0
@@ -50,6 +51,8 @@ xfdesktop zawiera zarządcę pulpitu dla środowiska Xfce.
 
 %prep
 %setup -q
+%patch0 -p1
+
 
 %build
 %configure \
