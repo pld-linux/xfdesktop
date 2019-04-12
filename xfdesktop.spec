@@ -13,15 +13,15 @@ BuildRequires:	Thunar-devel >= 1.8.0
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.84
-BuildRequires:	exo-devel >= 0.12.0
+BuildRequires:	exo-devel >= 0.11.0
 BuildRequires:	garcon-devel >= 0.6.0
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.30.0
-BuildRequires:	gtk+3-devel
+BuildRequires:	glib2-devel >= 1:2.42.0
+BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libnotify-devel >= 0.4.0
 BuildRequires:	libtool >= 2:2.2.6
-BuildRequires:	libwnck-devel
+BuildRequires:	libwnck-devel >= 3.14
 BuildRequires:	libxfce4ui-devel >= 4.13.0
 BuildRequires:	libxfce4util-devel >= 4.12.0
 BuildRequires:	pkgconfig >= 1:0.9.0
