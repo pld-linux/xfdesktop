@@ -1,14 +1,13 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.13.1
+Version:	4.13.4
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.13/%{name}-%{version}.tar.bz2
-# Source0-md5:	9e7d04e79053cf9ec077f55425f234c6
+# Source0-md5:	d1174af12148141a07b62cc051c43c84
 URL:		http://www.xfce.org/projects/xfdesktop
-Patch0:		thunarx-3.patch
 BuildRequires:	Thunar-devel >= 1.8.0
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake >= 1:1.8
@@ -51,8 +50,6 @@ xfdesktop zawiera zarządcę pulpitu dla środowiska Xfce.
 
 %prep
 %setup -q
-%patch0 -p1
-
 
 %build
 %configure \
@@ -75,6 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{fa_IR,fa}
 # just a copy of ur (.po files differ only by trailing junk)
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ie
 
 %find_lang %{name}
 
