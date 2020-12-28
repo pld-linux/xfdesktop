@@ -1,12 +1,12 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.14.2
+Version:	4.16.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	5db09df39b0808f25bd3a3128f8c9e77
+Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.16/%{name}-%{version}.tar.bz2
+# Source0-md5:	20de956693011c429e3ec2928f535b7a
 URL:		http://www.xfce.org/projects/xfdesktop
 BuildRequires:	Thunar-devel >= 1.8.0
 BuildRequires:	autoconf >= 2.60
@@ -15,7 +15,7 @@ BuildRequires:	dbus-glib-devel >= 0.84
 BuildRequires:	exo-devel >= 0.11.0
 BuildRequires:	garcon-devel >= 0.6.0
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.42.0
+BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libnotify-devel >= 0.4.0
@@ -68,12 +68,13 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # unify dir name (verify first that target doesn't exist)
-[ ! -e $RPM_BUILD_ROOT%{_datadir}/locale/fa ] || exit 1
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{fa_IR,fa}
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{hy_AM,hy}
+[ ! -e $RPM_BUILD_ROOT%{_localedir}/fa ] || exit 1
+%{__mv} $RPM_BUILD_ROOT%{_localedir}/{fa_IR,fa}
+%{__mv} $RPM_BUILD_ROOT%{_localedir}/{hy_AM,hy}
 # just a copy of ur (.po files differ only by trailing junk)
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ie
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ur_PK
+# unsupported
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{hye,ie}
 
 %find_lang %{name}
 
@@ -88,16 +89,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO
+%doc AUTHORS ChangeLog TODO
 %attr(755,root,root) %{_bindir}/xfdesktop
 %attr(755,root,root) %{_bindir}/xfdesktop-settings
 %{_mandir}/man1/xfdesktop.1*
 %{_desktopdir}/xfce-backdrop-settings.desktop
 %{_pixmapsdir}/xfce4_xicon*.png
 %{_pixmapsdir}/xfdesktop
-%{_iconsdir}/hicolor/*/apps/xfce4-backdrop.*
-%{_iconsdir}/hicolor/*/apps/xfce4-menueditor.*
+%{_iconsdir}/hicolor/*x*/apps/org.xfce.xfdesktop.png
+%{_iconsdir}/hicolor/scalable/apps/org.xfce.xfdesktop.svg
 %dir %{_datadir}/backgrounds/xfce
 %{_datadir}/backgrounds/xfce/xfce-blue.jpg
 %{_datadir}/backgrounds/xfce/xfce-stripes.png
 %{_datadir}/backgrounds/xfce/xfce-teal.jpg
+%{_datadir}/backgrounds/xfce/xfce-verticals.png
