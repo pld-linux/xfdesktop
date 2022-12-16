@@ -1,14 +1,14 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Zarządca pulpitu dla środowiska Xfce
 Name:		xfdesktop
-Version:	4.16.1
+Version:	4.18.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/xfce/xfdesktop/4.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	4a25b8bcd5cc354b8671060123c26539
-URL:		http://www.xfce.org/projects/xfdesktop
-BuildRequires:	Thunar-devel >= 1.8.0
+Source0:	https://archive.xfce.org/src/xfce/xfdesktop/4.18/%{name}-%{version}.tar.bz2
+# Source0-md5:	0d0ac4b29e8aae0361032343f34fc8df
+URL:		https://www.xfce.org/projects/xfdesktop
+BuildRequires:	Thunar-devel >= 4.18.0
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.84
@@ -24,22 +24,22 @@ BuildRequires:	libwnck-devel >= 3.14
 BuildRequires:	libxfce4ui-devel >= 4.14.0
 BuildRequires:	libxfce4util-devel >= 4.14.0
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	rpmbuild(macros) >= 1.601
-BuildRequires:	xfce4-dev-tools >= 4.14.0
-BuildRequires:	xfconf-devel >= 4.14.0
+BuildRequires:	rpmbuild(macros) >= 2.000
+BuildRequires:	xfce4-dev-tools >= 4.18.0
+BuildRequires:	xfconf-devel >= 4.18.0
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
-Requires:	Thunar-libs >= 1.8.0
+Requires:	Thunar-libs >= 4.18.0
 Requires:	dbus-glib >= 0.84
 Requires:	exo >= 0.12.0
 Requires:	garcon >= 0.6.0
-Requires:	glib2 >= 1:2.30.0
+Requires:	glib2 >= 1:2.50.0
 Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
-Requires:	libxfce4ui >= 4.14.0
-Requires:	libxfce4util >= 4.14.0
+Requires:	libxfce4ui >= 4.18.0
+Requires:	libxfce4util >= 4.18.0
 Requires:	xfce4-dirs >= 4.6
-Requires:	xfconf >= 4.12.1
+Requires:	xfconf >= 4.18.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -103,3 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/backgrounds/xfce/xfce-stripes.png
 %{_datadir}/backgrounds/xfce/xfce-teal.jpg
 %{_datadir}/backgrounds/xfce/xfce-verticals.png
+%{_datadir}/backgrounds/xfce/xfce-flower.svg
+%{_datadir}/backgrounds/xfce/xfce-leaves.svg
+%{_datadir}/backgrounds/xfce/xfce-shapes.svg
